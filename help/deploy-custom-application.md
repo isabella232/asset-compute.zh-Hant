@@ -2,10 +2,10 @@
 title: 部署 [!DNL Asset Compute Service] 自訂應用程式。
 description: 部署 [!DNL Asset Compute Service] 自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 1c2a1dc41296bf26c432c51b5afa20cb07a4c5c5
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 8%
+source-wordcount: '197'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 8%
 
 若要取得相同的URL而不重新部署應用程式，請使用 [`aio app get-url`](https://github.com/adobe/aio-cli#aio-appget-url-action) 命令。
 
-將Experience Manager中處 [理設定檔的URL當做雲端服務](https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html) ，將應用程式與雲 [!DNL Experience Manager] 端服務整合。
+將Experience Manager中處 [理設定檔的URL當做雲端服務](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html) ，將應用程式與雲 [!DNL Experience Manager] 端服務整合。
 
 請確定您的Firefly專案和工作區對應至您 [!DNL Experience Manager] 要使用動作的雲端服務環境。 它有不同的開發、測試和生產環境。 您可以通過檢查Firefly應 `AIO_runtime_*` 用程式根中ENV檔案中定義的憑據來驗證環境。 例如，要部署到工 `Stage` 作區， `AIO_runtime_namespace` 格式為 `xxxxxx_xxxxxxxxx_stage`。 若要與雲端 [!DNL Experience Manager] 服務生產環境整合，請使用Firefly工作區中的應用程式 `Production` URL。
 
@@ -26,5 +26,5 @@ ht-degree: 8%
 
 >[!MORELIKETHIS]
 >
->* [以雲端服務的形式瞭解並管理Experience Manager中的環境](https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/implementing/using-cloud-manager/manage-environments.html)。
+>* [以雲端服務的形式瞭解並管理Experience Manager中的環境](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/manage-environments.html)。
 
