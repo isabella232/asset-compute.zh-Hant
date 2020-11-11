@@ -9,15 +9,15 @@ user-guide-description: 本檔案 [!DNL Asset Compute Service] 涵蓋如何開�
 breadcrumb-title: 資產計算服務指南
 breadcrumb-url: /docs/asset-compute/using/home.html
 solution-title: AEM Assets
-solution-hub-url: https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/assets/home.html
-getting-started-url: https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/asset-microservices-overview.html
+solution-hub-url: https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/home.html
+getting-started-url: https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html
 tutorials-title: AEM 教學課程
-tutorials-url: https://docs.adobe.com/content/help/en/experience-manager-learn/assets/overview.html
+tutorials-url: https://experienceleague.adobe.com/docs/experience-manager-learn/assets/overview.html
 translation-type: tm+mt
-source-git-commit: ec2fd2e7c20ad9d104f95724a3970a433ac7d50f
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '134'
-ht-degree: 17%
+source-wordcount: '124'
+ht-degree: 12%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 17%
 + [資產計算服務使用指南](home.md)
 + [概覽](introduction.md)
 + [發行說明](release-notes.md)
-+ [支援的檔案格式](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html)
++ [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
 + [架構](architecture.md)
 + [API參考](api.md)
 + 擴充資產計算服務 {#extend}
@@ -37,6 +37,6 @@ ht-degree: 17%
    + [開發自訂應用程式](develop-custom-application.md)
    + [測試自訂應用程式](test-custom-application.md)
    + [部署自訂應用程式](deploy-custom-application.md)
-   + [將Experience Manager整合併用作雲端服務](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/asset-microservices-overview.html)
+   + [將Experience Manager整合併用作雲端服務](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
 + [疑難排解](troubleshooting.md)
 + [為開放原始碼專案貢獻心力](contribute-to-compute-service.md)
