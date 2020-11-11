@@ -398,7 +398,7 @@ HTTP狀態代碼為：
 | `dpi` | `number` 或 `object` | 設定x和y DPI。 為簡單起見，它也可以設為單一數字，用於x和y。它對影像本身沒有影響。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
 | `convertToDpi` | `number` 或 `object` | x和y DPI會重新取樣值，同時維持實體大小。 為簡單起見，它也可以設為單一數字，用於x和y。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
 | `files` | `array` | 要包含在ZIP檔案中的檔案清單(`fmt=zip`)。 每個項目可以是URL字串或具有下列欄位的物件：<ul><li>`url`:下載檔案的URL</li><li>`path`:將檔案儲存在ZIP中此路徑下</li></ul> | `[{ "url": "https://host/asset.jpg", "path": "folder/location/asset.jpg" }]` |
-| `duplicate` | `string` | ZIP封存檔案的重複處`fmt=zip`理。 依預設，儲存在ZIP中相同路徑下的多個檔案會產生錯誤。 設 `duplicate` 定 `ignore` 為只產生要儲存的第一個資產，而忽略其餘的資產。 | `ignore` |
+| `duplicate` | `string` | ZIP封存檔案的重複處`fmt=zip`理。 依預設，儲存在ZIP中相同路徑下的多個檔案會產生錯誤。 設 `duplicate` 定 `ignore` 為只產生要儲存的第一個資產，其餘的則忽略。 | `ignore` |
 | `watermark` | `object` | 包含有關浮水印的 [說明](#watermark-specific-fields)。 |  |
 
 ### 水印特定欄位 {#watermark-specific-fields}
