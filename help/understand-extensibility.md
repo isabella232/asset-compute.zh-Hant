@@ -2,17 +2,17 @@
 title: 瞭解延伸功能 [!DNL Asset Compute Service]。
 description: 何時及如何擴充 [!DNL Asset Compute Service] 功能以進行自訂資產處理。
 translation-type: tm+mt
-source-git-commit: 54afa44d8d662ee1499a385f504fca073ab6c347
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '275'
-ht-degree: 3%
+source-wordcount: '271'
+ht-degree: 0%
 
 ---
 
 
 # 擴充性簡介 {#introduction-to-extensibilty}
 
-雲端服務中的「處理設定檔」可解決許多轉譯需求，例如轉換為格 [式 [!DNL Experience Manager] 和調整影像大小](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/asset-microservices-overview.html)。 更複雜的業務需求可能需要定製的解決方案，以滿足組織的需求。 [!DNL Asset Compute Service] 可以通過在中建立從處理配置檔案調用的自定義應用程式來擴展 [!DNL Experience Manager]。 這些自訂應用程式符合支 [援的使用案例](https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+雲端服務中的「處理設定檔」可解決許多轉譯需求，例如轉換為格 [式 [!DNL Experience Manager] 和調整影像大小](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。 更複雜的業務需求可能需要定製的解決方案，以滿足組織的需求。 [!DNL Asset Compute Service] 可以通過在中建立從處理配置檔案調用的自定義應用程式來擴展 [!DNL Experience Manager]。 這些自訂應用程式符合支 [援的使用案例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
