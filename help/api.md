@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 建立自訂應用程式的HTTP API。'
 translation-type: tm+mt
-source-git-commit: 18e97e544014933e9910a12bc40246daa445bf4f
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '2931'
+source-wordcount: '2925'
 ht-degree: 2%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # [!DNL Asset Compute Service] HTTP API {#asset-compute-http-api}
 
-API的使用僅限於開發用途。 開發自訂應用程式時，API會以內容形式提供。 [!DNL Adobe Experience Manager] 因為雲端服務會使用API將處理資訊傳遞至自訂應用程式。 如需詳細資訊，請參 [閱使用資產微服務和處理設定檔](https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+API的使用僅限於開發用途。 開發自訂應用程式時，API會以內容形式提供。 [!DNL Adobe Experience Manager] 因為雲端服務會使用API將處理資訊傳遞至自訂應用程式。 如需詳細資訊，請參 [閱使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
@@ -322,7 +322,7 @@ HTTP狀態代碼為：
 
 * **401未授權**:當請求沒有有效驗 [證](#authentication-and-authorization)。 範例可能是無效的存取Token或無效的API金鑰。
 * **403禁止**:當請求沒有有效的授 [權](#authentication-and-authorization)。 範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）並未訂閱所有必要服務。
-* **429請求太多**:當系統由此客戶端或一般情況過載時。 客戶端可以在指數型回退時 [重試](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
+* **429請求太多**:當系統由此客戶端或通常由此客戶端過載時。 客戶端可以在指數型回退時 [重試](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
 * **4xx錯誤**:發生其他客戶機錯誤時。 通常會傳回JSON回應，例如此回應，但並非所有錯誤都能保證：
 
    ```json
@@ -374,7 +374,7 @@ HTTP狀態代碼為：
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 轉譯目標格式也可用於文 `text` 字擷取和XMP中 `xmp` 繼資料擷取為xml。 檢視支 [援的格式](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
+| `fmt` | `string` | 轉譯目標格式也可用於文 `text` 字擷取和XMP中 `xmp` 繼資料擷取為xml。 檢視支 [援的格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
 | `worker` | `string` | 自訂應用程 [式的URL](develop-custom-application.md)。 必須是 `https://` URL。 如果此欄位存在，則由自訂應用程式建立轉譯。 然後，任何其他設定的轉譯欄位都會用於自訂應用程式。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | 使用HTTP PUT上傳產生轉譯的URL。 | `http://w.com/img.jpg` |
 | `target` | `object` | 產生轉譯的多部分預先簽署的URL上傳資訊。 這適用於 [AEM/Oak Direct Binary Upload](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) with this [multipart upload behavior](http://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html).<br>欄位:<ul><li>`urls`:字串陣列，每個預先簽署的部件URL各一個</li><li>`minPartSize`:一個部件的最小大小= url</li><li>`maxPartSize`:用於一個部件的最大大小= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -382,7 +382,7 @@ HTTP狀態代碼為：
 
 ### 轉譯特定欄位 {#rendition-specific-fields}
 
-如需目前支援的檔案格式清單，請參閱支 [援的檔案格式](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html)。
+如需目前支援的檔案格式清單，請參閱支 [援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
@@ -398,7 +398,7 @@ HTTP狀態代碼為：
 | `dpi` | `number` 或 `object` | 設定x和y DPI。 為簡單起見，它也可以設為單一數字，用於x和y。它對影像本身沒有影響。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
 | `convertToDpi` | `number` 或 `object` | x和y DPI會重新取樣值，同時維持實體大小。 為簡單起見，它也可以設為單一數字，用於x和y。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
 | `files` | `array` | 要包含在ZIP檔案中的檔案清單(`fmt=zip`)。 每個項目可以是URL字串或具有下列欄位的物件：<ul><li>`url`:下載檔案的URL</li><li>`path`:將檔案儲存在ZIP中此路徑下</li></ul> | `[{ "url": "https://host/asset.jpg", "path": "folder/location/asset.jpg" }]` |
-| `duplicate` | `string` | ZIP封存檔案的重複處`fmt=zip`理。 依預設，儲存在ZIP中相同路徑下的多個檔案會產生錯誤。 設 `duplicate` 定 `ignore` 為只產生要儲存的第一個資產，其餘的則忽略。 | `ignore` |
+| `duplicate` | `string` | ZIP封存檔案的重複處`fmt=zip`理。 依預設，儲存在ZIP中相同路徑下的多個檔案會產生錯誤。 設 `duplicate` 定 `ignore` 為只產生要儲存的第一個資產，而忽略其餘的資產。 | `ignore` |
 | `watermark` | `object` | 包含有關浮水印的 [說明](#watermark-specific-fields)。 |  |
 
 ### 水印特定欄位 {#watermark-specific-fields}
