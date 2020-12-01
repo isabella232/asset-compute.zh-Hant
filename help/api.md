@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 建立自訂應用程式的HTTP API。'
 translation-type: tm+mt
-source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
+source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
 workflow-type: tm+mt
-source-wordcount: '2925'
+source-wordcount: '2921'
 ht-degree: 2%
 
 ---
@@ -12,11 +12,11 @@ ht-degree: 2%
 
 # [!DNL Asset Compute Service] HTTP API  {#asset-compute-http-api}
 
-API的使用僅限於開發用途。 開發自訂應用程式時，API會以內容形式提供。 [!DNL Adobe Experience Manager] 因為雲端服務會使用API將處理資訊傳遞至自訂應用程式。如需詳細資訊，請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+API的使用僅限於開發用途。 開發自訂應用程式時，API會以內容形式提供。 [!DNL Adobe Experience Manager] as  [!DNL Cloud Service] as uses the API to processing information to a custom application.如需詳細資訊，請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service] 只能與雲端服 [!DNL Experience Manager] 務搭配使用。
+>[!DNL Asset Compute Service] 只能與 [!DNL Experience Manager] as  [!DNL Cloud Service]
 
 [!DNL Asset Compute Service] HTTP API的任何用戶端都必須遵循此高階流程：
 
@@ -100,7 +100,7 @@ API的使用僅限於開發用途。 開發自訂應用程式時，API會以內�
 |-----------------------|------------------------------------------------------|
 | MIME類型 | `application/json` |
 | 頁首 `X-Request-Id` | 與`X-Request-Id`請求標題相同，或是唯一產生的標題。 用於識別跨系統的請求和／或支援請求。 |
-| 響應體 | 具有`journal`、`ok`及／或`requestId`欄位的JSON物件。 |
+| 響應體 | 具有`journal`、`ok`和／或`requestId`欄位的JSON物件。 |
 
 HTTP狀態代碼為：
 
@@ -322,7 +322,7 @@ HTTP狀態代碼為：
 
 * **401未授權**:當請求沒有有效驗 [證](#authentication-and-authorization)。範例可能是無效的存取Token或無效的API金鑰。
 * **403禁止**:當請求沒有有效的授 [權](#authentication-and-authorization)。範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）並未訂閱所有必要服務。
-* **429請求太多**:當系統由此客戶端或通常由此客戶端過載時。客戶端可以使用[指數回退](https://en.wikipedia.org/wiki/Exponential_backoff)重試。 屍體是空的。
+* **429請求太多**:當系統由此客戶端或一般情況過載時。客戶端可以使用[指數回退](https://en.wikipedia.org/wiki/Exponential_backoff)重試。 屍體是空的。
 * **4xx錯誤**:發生其他客戶機錯誤時。通常會傳回JSON回應，例如此回應，但並非所有錯誤都能保證：
 
    ```json
