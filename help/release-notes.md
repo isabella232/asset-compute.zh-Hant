@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]的發行說明。'
 description: ' [!DNL Asset Compute Service]中的新功能、增強功能和已知問題。'
 translation-type: tm+mt
-source-git-commit: 68d910cd092fccb599c361f24daff80460129e1c
+source-git-commit: c57867cd896e4ccb9402e6eeb0eea133faaa0e5d
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '191'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ To test your custom applications with the [developer tool](https://github.com/ad
 
 這是[!DNL Asset Compute Service]的第一個版本。 它是[!DNL Adobe Experience Cloud]的可擴充且可擴充的服務，可處理數位資產。 它可將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
 
-目前，[!DNL Asset Compute Service]只能用於[!DNL Experience Manager]作為雲端服務。
+目前，[!DNL Asset Compute Service]只能用在[!DNL Experience Manager]中作為[!DNL Cloud Service]。
 
 ## 限制和已知問題{#known-limitations}
 
