@@ -1,5 +1,5 @@
 ---
-title: 介紹 [!DNL Asset Compute Service]。
+title: ' [!DNL Asset Compute Service]簡介。'
 description: '[!DNL Asset Compute Service] 是雲端原生資產處理服務，可降低複雜性並改善可擴充性。'
 translation-type: tm+mt
 source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
@@ -10,23 +10,23 @@ ht-degree: 0%
 ---
 
 
-# 概觀 [!DNL Asset Compute Service] {#overview}
+# [!DNL Asset Compute Service] {#overview}概觀
 
-[!DNL Asset Compute Service] 是可擴充且可擴充的數位資 [!DNL Adobe Experience Cloud] 產處理服務。 它可將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
+[!DNL Asset Compute Service] 是處理數位資產的可擴充 [!DNL Adobe Experience Cloud] 且可擴充的服務。它可將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
 
-開發人員可以外掛自訂資產應用程式（也稱為自訂工作者），以處理自訂使用案例。 服務可在執行時期 [!DNL Adobe I/O] 運作。 它可透過以Node.js [!DNL Project Firefly] 編寫的無頭應用程式擴充。 這些作業可以執行自訂作業，例如呼叫外部API以執行影像作業或運用支 [!DNL Adobe Sensei] 援。
+開發人員可以外掛自訂資產應用程式（也稱為自訂工作者），以處理自訂使用案例。 服務在[!DNL Adobe I/O]運行時運行。 它可透過以Node.js編寫的[!DNL Project Firefly]無頭應用程式延伸。 這些作業可以執行自訂作業，例如呼叫外部API以執行影像作業或運用[!DNL Adobe Sensei]支援。
 
-[!DNL Project Firefly] 是在執行時期上建立和部署自訂Web應用程式的架 [!DNL Adobe I/O] 構，以擴充Adobe Experience Cloud解決方案。 若要建立自訂應用程式，開發人 [!DNL React Spectrum] 員可運用（Adobe的UI工具套件）、建立微型服務、建立自訂事件和協調API。 請參 [閱Project Firefly的檔案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
+[!DNL Project Firefly] 是在執行時期上建立和部署自訂Web應用程式 [!DNL Adobe I/O] 以擴充Adobe Experience Cloud解決方案的架構。若要建立自訂應用程式，開發人員可運用[!DNL React Spectrum]（Adobe的UI工具套件）、建立微型服務、建立自訂事件和協調API。 請參閱[Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)的檔案。
 
 >[!NOTE]
 >
->目前， [!DNL Asset Compute Service] 只能透過雲端 [!DNL Experience Manager] 服務使用。 管理員會建立處理設定檔，可呼叫 [!DNL Asset Compute Service] 傳遞資產以進行處理。 See [use asset microservices and processing profiles](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html).
+>目前，[!DNL Asset Compute Service]只能透過[!DNL Experience Manager]作為雲端服務使用。 管理員會建立可呼叫[!DNL Asset Compute Service]的處理設定檔，以傳遞資產以供處理。 請參閱[使用資產微服務和處理配置檔案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
-## 支援的使用案例 [!DNL Asset Compute Service] {#possible-use-cases-benefits}
+## [!DNL Asset Compute Service] {#possible-use-cases-benefits}支援的使用案例
 
 [!DNL Asset Compute Service] 支援一些常見的業務使用案例，如基本影像處理；Adobe應用程式特定轉換；以及自訂應用程式的建立，以協調複雜的業務需求。
 
-您可以使 [!DNL Asset Compute] 用web service來產生不同檔案類型的縮圖，以及支援檔案格式的高 [品質影像演算](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。 查看 [透過自訂設定支援的使用案例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+您可以使用[!DNL Asset Compute] web service來產生不同檔案類型的縮圖，並針對[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)產生高品質的影像轉譯。 請參閱透過自訂設定[支援的使用案例。](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)
 
 >[!NOTE]
 >
