@@ -2,9 +2,9 @@
 title: 開發 [!DNL Asset Compute Service]。
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 6de4e3cde9c38f2e23838f5d728dae23e15d2147
+source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->這與[!DNL Adobe Experience Manager]的雲端儲存區(Cloud Service)不同。 它僅適用於使用資產計算開發人員工具進行開發和測試。
+>這與[!DNL Adobe Experience Manager]的雲端儲存區不同，是[!DNL Cloud Service]。 它僅適用於使用資產計算開發人員工具進行開發和測試。
 
 請務必存取[支援的雲端儲存容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可視需要由多位開發人員跨不同專案共用。
 
