@@ -1,6 +1,6 @@
 ---
-title: 架構 [!DNL Asset Compute Service]。
-description: HowAPI、應 [!DNL Asset Compute Service] 用程式和SDK可搭配運作，以提供雲端原生資產處理服務。
+title: ' [!DNL Asset Compute Service]的體系結構。'
+description: 'API、應用程式和SDK如何搭配運作，以提供雲端原生資產處理服務。 [!DNL Asset Compute Service] '
 translation-type: tm+mt
 source-git-commit: 0fb256f7d9f83fbae564d9fd52ee6b2f34c5d7e9
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 0%
 ---
 
 
-# 建築 [!DNL Asset Compute Service] {#overview}
+# [!DNL Asset Compute Service] {#overview}的架構
 
-它 [!DNL Asset Compute Service] 建立在無伺服器Adobe I/O Runtime平台之上。 它為資產提供Adobe Sensei內容服務支援。 叫用的用戶端( [!DNL Experience Manager] 僅支援雲端服務)會隨附Adobe Sensei為資產所搜尋的資訊。 傳回的資訊為JSON格式。
+[!DNL Asset Compute Service]是建立在無伺服器Adobe I/O Runtime平台之上。 它為資產提供Adobe Sensei內容服務支援。 叫用的用戶端（僅支援[!DNL Experience Manager]做為雲端服務）會隨附Adobe Sensei產生的資訊，供其尋找資產。 傳回的資訊為JSON格式。
 
-[!DNL Asset Compute Service] 可擴充，方法是根據建立自訂應用程式 [!DNL Project Firefly]。 這些自訂應用程 [!DNL Project Firefly] 式是無頭應用程式，執行例如新增自訂轉換工具或呼叫外部API以執行影像作業等工作。
+[!DNL Asset Compute Service] 可擴充，方法是根據建立自訂應用程式 [!DNL Project Firefly]。這些自訂應用程式是[!DNL Project Firefly]無頭應用程式，並執行例如新增自訂轉換工具或呼叫外部API以執行影像作業等工作。
 
-[!DNL Project Firefly] 是在執行時期上建立和部署自訂Web應用程式的架 [!DNL Adobe I/O] 構。 若要建立自訂應用程式，開發人 [!DNL React Spectrum] 員可運用（Adobe的UI工具套件）、建立微型服務、建立自訂事件和協調API。 請參 [閱Project Firefly的檔案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
+[!DNL Project Firefly] 是在執行時期上建立和部署自訂Web應用程式的 [!DNL Adobe I/O] 架構。若要建立自訂應用程式，開發人員可運用[!DNL React Spectrum]（Adobe的UI工具套件）、建立微型服務、建立自訂事件和協調API。 請參閱[Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)的檔案。
 
 該體系結構的基礎包括：
 
@@ -32,11 +32,11 @@ ht-degree: 0%
 
 該體系結構由以下部分組成：
 
-* **API與協調層** （以JSON格式）會接收要求，指示服務將來源資產轉換為多個轉譯。 這些請求是非同步的，並會以啟動ID（亦即「工作ID」）傳回。 說明完全是宣告性的，對於所有標準處理工作（例如縮圖產生、文字擷取），使用者只會指定所需的結果，而不會指定處理特定轉譯的應用程式。 一般API功能（例如驗證、分析、速率限制）是使用服務前面的Adobe API閘道處理，並管理所有前往I/O Runtime的請求。 應用程式路由由協調層動態完成。 客戶端可以為特定轉譯指定自訂應用程式，並包含自訂參數。 應用程式執行可以完全並行，因為它們是I/O Runtime中獨立的無伺服器函式。
+* **API和協調層接** 收要求（以JSON格式），指示服務將來源資產轉換為多個轉譯。這些請求是非同步的，並會以啟動ID（亦即「工作ID」）傳回。 說明完全是宣告性的，對於所有標準處理工作（例如縮圖產生、文字擷取），使用者只會指定所需的結果，而不會指定處理特定轉譯的應用程式。 一般API功能（例如驗證、分析、速率限制）是使用服務前面的Adobe API閘道處理，並管理所有前往I/O Runtime的請求。 應用程式路由由協調層動態完成。 客戶端可以為特定轉譯指定自訂應用程式，並包含自訂參數。 應用程式執行可以完全並行，因為它們是I/O Runtime中獨立的無伺服器函式。
 
-* **應用程式** ，以處理專門處理特定檔案格式或目標轉譯的資產。 從概念上講，應用程式與Unix管道概念類似：輸入檔案被轉換成一個或多個輸出檔案。
+* **處理專門處** 理特定類型檔案格式或目標轉譯的資產的應用程式。從概念上講，應用程式與Unix管道概念類似：輸入檔案被轉換成一個或多個輸出檔案。
 
-* **通用 [應用程式庫](https://github.com/adobe/asset-compute-sdk)** ，可處理常用工作，例如下載來源檔案、上傳轉譯、錯誤報告、事件傳送和監控。 這樣，開發應用程式就會盡可能簡單，遵循無伺服器的理念，而且可限制在本機檔案系統互動。
+* **通用 [應用程](https://github.com/adobe/asset-compute-sdk)** 式庫可處理常用工作，例如下載來源檔案、上傳轉譯、錯誤報告、事件傳送和監控。這樣，開發應用程式就會盡可能簡單，遵循無伺服器的理念，而且可限制在本機檔案系統互動。
 
 <!-- TBD:
 
