@@ -1,8 +1,8 @@
 ---
-source-git-commit: 0a0feacbcd6456e01a6d451f9954ab21c1a8bce3
+source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
 workflow-type: tm+mt
 translation-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '646'
 ht-degree: 5%
 
 ---
@@ -30,9 +30,9 @@ ht-degree: 5%
 
 ### 檔案提供不是回答客戶的問題
 
-歡迎您提出任何必須改善檔案的想法，做為貢獻。 但是，評論、問題和提取要求僅供稿 *件* 。 它們不是用來回答您有關如何使用產品、實作專案或解決技術問題的問題。
+歡迎您提出任何必須改善檔案的想法，做為貢獻。 但是，評論、問題和提取請求僅適用於&#x200B;*貢獻*。 它們不是用來回答您有關如何使用產品、實作專案或解決技術問題的問題。
 
-如果您對使用方式或技術錯誤有任何疑問，請透過 [Experience Cloud企業支援入口網站](https://helpx.adobe.com/tw/contact/enterprise-support.ec.html) ，或在 [Experience Manager社群中討論](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)。
+有關使用或技術錯誤的任何問題，應通過[[!DNL Experience Cloud] 企業支援門戶](https://helpx.adobe.com/tw/contact/enterprise-support.ec.html)的正常支援流程報告，或在[[!DNL Experience Manager] 社區](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)中討論。
 
 說明檔案內容並非Adobe客戶服務***的替代品，任何尋求支援相關問題解答的此類內容將遭拒絕。
 
@@ -60,7 +60,7 @@ ht-degree: 5%
 
 #### 遵循Microsoft樣式手冊
 
-[Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/) (Microsoft Manual of Style)是免費提供的檔案樣式指南，主要介紹軟體文檔。
+[Microsoft Manual of ](https://docs.microsoft.com/en-us/style-guide/welcome/) Style是免費提供的檔案樣式指南，主要針對軟體檔案。
 
 ### 正在格式化
 
