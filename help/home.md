@@ -2,9 +2,9 @@
 title: '[!DNL Adobe Asset Compute Service] 使用手冊.'
 description: 本檔案涵蓋 [!DNL Asset Compute Service] 工作，例如簡介、如何開發、管理、部署及疑難排解自訂程式碼。
 translation-type: tm+mt
-source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
+source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 如需版本相關資訊和最新版本，請參閱[版本注意事項](/help/release-notes.md)。
 
-請參閱[Adobe Experience Manager中以雲端服務身分提供的資產微服務功能概觀，以及如何使用[!DNL Experience Manager]中的微服務。](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
+請參閱 [!DNL Adobe Experience Manager] 中 [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)提供的[資產微服務功能概觀，以及如何使用[!DNL Experience Manager]中的微服務。
 
 <!--
 Possible to record the below info here in this landing page to centralize the miscellaneous info about Asset Compute Service?
