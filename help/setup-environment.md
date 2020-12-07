@@ -2,9 +2,9 @@
 title: 設定 [!DNL Asset Compute Service]所需的開發環境。
 description: ' [!DNL Asset Compute Service] 的開發人員環境設定，以開始建立和測試自訂代碼。'
 translation-type: tm+mt
-source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
+source-git-commit: 0ecf2c044c7847029fb10ce37f4b831c58b93fe9
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 1. 在「體驗組織」中獲得系統管理員或開發人員角色存取權。 這可由系統管理員在[管理控制台](https://adminconsole.adobe.com/overview)中設定。
 
-1. 登入[Adobe Developer Console](https://console.adobe.io/)。 請確定您是[!DNL Cloud Service]整合AEM的相同Adobe Experience Cloud組織的一員。 如需Adobe Developer Console的詳細資訊，請參閱[ Console檔案](https://www.adobe.io/apis/experienceplatform/console/docs.html)。
+1. 登入[Adobe Developer Console](https://console.adobe.io/)。 請確定您是[!DNL Experience Manager]與[!DNL Cloud Service]整合的相同Adobe Experience Cloud組織的一員。 如需Adobe Developer Console的詳細資訊，請參閱[ Console檔案](https://www.adobe.io/apis/experienceplatform/console/docs.html)。
 
 1. [建立Firefly專案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/first_app.md)。按一下「建立新專案&#x200B;**[!UICONTROL >]**&#x200B;從範本&#x200B;**[!UICONTROL 建立專案」。]**&#x200B;選取「Firefly」（螢火蟲）。 它會建立新的Firefly專案，其中包含兩個工作區：`Production`和`Stage`。 視需要新增其他工作區，例如`Development`。
 
