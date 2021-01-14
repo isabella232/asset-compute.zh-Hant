@@ -2,9 +2,9 @@
 title: 開發 [!DNL Asset Compute Service]。
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
+source-git-commit: 576936cc7527fc4cb43c0859a61df5fecc0bc3a8
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1569'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
    create console.json
    ```
 
-1. 出現提示時，請至少選擇`Which Adobe I/O App features do you want to enable for this project?`:`Actions`
+1. 出現提示時，選擇`Which Adobe I/O App features do you want to enable for this project?`。 `Actions`請確定取消選取`Web Assets`選項，因為Web資產會使用不同的驗證和授權檢查。
 
    ```bash
    ? Which Adobe I/O App features do you want to enable for this project?
