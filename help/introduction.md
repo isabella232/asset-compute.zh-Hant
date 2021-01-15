@@ -2,7 +2,7 @@
 title: ' [!DNL Asset Compute Service]簡介。'
 description: '[!DNL Asset Compute Service] 是雲端原生資產處理服務，可降低複雜性並改善可擴充性。'
 translation-type: tm+mt
-source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 [!DNL Asset Compute Service] 支援一些常見的業務使用案例，如基本影像處理；Adobe應用程式特定轉換；以及自訂應用程式的建立，以協調複雜的業務需求。
 
-您可以使用[!DNL Asset Compute] web service來產生不同檔案類型的縮圖，並針對[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)產生高品質的影像轉譯。 請參閱透過自訂設定[支援的使用案例。](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)
+您可以使用[!DNL Asset Compute] web service來產生不同檔案類型的縮圖，並針對[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)產生高品質的影像轉譯。 請參閱透過自訂設定](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)支援的使用案例。[
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ ht-degree: 0%
 | Binary uploads or API-based asset ingestion. | Use other methods to ingest assets. |
 | Store binaries or any persisted data across processing requests.| Each request is independent so treat it as a standalone request by sharing binary and processing instructions. |
 | Store any configurations such as processing rules or settings for a user or an organization's account. | Add processing request to each request/instruction. |
-| Direct event handling of asset creation events from storage systems and processing completed notifications, and errors. | Use Adobe I/O Events and other methods. |
+| Direct event handling of asset creation events from storage systems and processing completed notifications, and errors. | Use [!DNL Adobe I/O] Events and other methods. |
 
 -->
 
