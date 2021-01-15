@@ -2,9 +2,9 @@
 title: 設定 [!DNL Asset Compute Service]所需的開發環境。
 description: ' [!DNL Asset Compute Service] 的開發人員環境設定，以開始建立和測試自訂代碼。'
 translation-type: tm+mt
-source-git-commit: 0ecf2c044c7847029fb10ce37f4b831c58b93fe9
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
    * [Docker Desktop](https://www.docker.com/get-started)。
    * [NodeJS](https://nodejs.org) （v10到v12 LTS，不建議使用奇數版本）和 [NPM](https://www.npmjs.com)。OSX HomeBrew的使用者可執行`brew install node`兩者安裝。 否則，請從[NodeJS下載頁面](https://nodejs.org/en/)下載。
    * IDE適合NodeJS，建議使用[Visual Studio代碼（VS代碼）](https://code.visualstudio.com)，因為它是調試器的支援IDE。 您可以將任何其他IDE用作代碼編輯器，但尚未支援高級用法（例如調試程式）。
-   * [AIO CLI](https://github.com/adobe/aio-cli) (`aio`)-使用安裝 `npm install -g @adobe/aio-cli`。
+   * [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) (`aio`)-使用安裝 `npm install -g @adobe/aio-cli`。
 
 1. 請務必符合[先決條件](/help/understand-extensibility.md#prerequisites-and-provisioning)。
 
@@ -34,9 +34,9 @@ ht-degree: 0%
 
 1. 登入[Adobe Developer Console](https://console.adobe.io/)。 請確定您是[!DNL Experience Manager]與[!DNL Cloud Service]整合的相同Adobe Experience Cloud組織的一員。 如需Adobe Developer Console的詳細資訊，請參閱[ Console檔案](https://www.adobe.io/apis/experienceplatform/console/docs.html)。
 
-1. [建立Firefly專案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/first_app.md)。按一下「建立新專案&#x200B;**[!UICONTROL >]**&#x200B;從範本&#x200B;**[!UICONTROL 建立專案」。]**&#x200B;選取「Firefly」（螢火蟲）。 它會建立新的Firefly專案，其中包含兩個工作區：`Production`和`Stage`。 視需要新增其他工作區，例如`Development`。
+1. [建立Firefly專案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/first_app.md)。按一下「建立新專案&#x200B;]**>**[!UICONTROL &#x200B;從範本&#x200B;]**建立專案」。**[!UICONTROL &#x200B;選取「Firefly」（螢火蟲）。 它會建立新的Firefly專案，其中包含兩個工作區：`Production`和`Stage`。 視需要新增其他工作區，例如`Development`。
 
-1. 在Firefly專案中，選取工作區並訂閱資產計算所需的服務。 按一下「新增至專案&#x200B;**>** API **」，並新增**、`Asset Compute`和`IO Events`服務。 `IO Events Management`新增第一個API時，會提示建立私密金鑰。 當您需要使用此金鑰來使用開發人員工具測試您的自訂應用程式時，請將此資訊儲存在您的機器上。
+1. 在Firefly專案中，選取工作區並訂閱資產計算所需的服務。 按一下「新增至專案&#x200B;**>** API **」，並新增`Asset Compute`、`IO Events`和`IO Events Management`服務。**&#x200B;新增第一個API時，會提示建立私密金鑰。 當您需要使用此金鑰來使用開發人員工具測試您的自訂應用程式時，請將此資訊儲存在您的機器上。
 
 ## 下一步{#next-step}
 
