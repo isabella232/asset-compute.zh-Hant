@@ -2,9 +2,9 @@
 title: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式。
 description: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 54afa44d8d662ee1499a385f504fca073ab6c347
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Asset Compute應用程式單元測試架構可讓您測試應用程式，毋需�
 
 ### 新增測試{#add-tests}
 
-測試需要在AIO項目根級別的`test`資料夾內進行。 每個應用程式的測試案例應位於路徑`test/asset-compute/<worker-name>`中，每個測試案例都有一個資料夾：
+測試需要在[!DNL Adobe I/O]專案根層級的`test`資料夾中進行。 每個應用程式的測試案例應位於路徑`test/asset-compute/<worker-name>`中，每個測試案例都有一個資料夾：
 
 ```yaml
 action/
@@ -85,7 +85,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-模擬檔案是JSON格式的http回應。 如需詳細資訊，請參閱本檔案[。 ](https://www.mock-server.com/mock_server/creating_expectations.html)如果要模擬多個主機名，請定義多個`mock-<mocked-host>.json`檔案。 以下是名為`mock-google.com.json`的`google.com`範例模擬檔案：
+模擬檔案是JSON格式的http回應。 如需詳細資訊，請參閱本檔案](https://www.mock-server.com/mock_server/creating_expectations.html)。 [如果要模擬多個主機名，請定義多個`mock-<mocked-host>.json`檔案。 以下是名為`mock-google.com.json`的`google.com`範例模擬檔案：
 
 ```json
 [{
