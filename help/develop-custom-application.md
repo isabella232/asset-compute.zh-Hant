@@ -2,9 +2,9 @@
 title: 開發 [!DNL Asset Compute Service]。
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 576936cc7527fc4cb43c0859a61df5fecc0bc3a8
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '1569'
+source-wordcount: '1560'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 建立自定義應用程式{#create-custom-application}
 
-請務必在本機安裝[Adobe I/O CLI](https://github.com/adobe/aio-cli)。
+請確保在本地安裝[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
 
 1. 若要建立自訂應用程式，請[建立Firefly應用程式](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 若要這麼做，請在您的終端中執行`aio app init <app-name>`。
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 
    ```sh
    $ aio app init <app-name>
-   Retrieving information from Adobe I/O Console..
+   Retrieving information from [!DNL Adobe I/O] Console.
    ? Select Org My Adobe Org
    ? Select Project MyFireflyProject
    ? Select Workspace myworkspace
@@ -121,7 +121,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 在使用資產計算開發人員工具執行應用程式之前，請正確設定[認證](#developer-tool-credentials)。
 
-若要在開發人員工具中執行應用程式，請使用`aio app run`命令。 它會將動作部署至Adobe I/O Runtime，並在您的本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式要求。 以下是範例轉譯請求：
+若要在開發人員工具中執行應用程式，請使用`aio app run`命令。 它會將動作部署至「[!DNL Adobe I/O]執行階段」，並在您的本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式要求。 以下是範例轉譯請求：
 
 ```json
 "renditions": [
@@ -266,7 +266,7 @@ const key = params.secretKey;
 
 ## 調整應用程式大小{#sizing-workers}
 
-應用程式會在Adobe I/O Runtime的容器中執行，其中[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)可透過`manifest.yml`進行設定：
+應用程式會在[!DNL Adobe I/O]執行階段的容器中執行，其中[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)可透過`manifest.yml`進行設定：
 
 ```yaml
     actions:
