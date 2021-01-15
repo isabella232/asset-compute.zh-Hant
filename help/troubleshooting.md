@@ -2,9 +2,9 @@
 title: 疑難排解 [!DNL Asset Compute Service].
 description: 使用 [!DNL Asset Compute Service]疑難排解自訂應用程式並除錯。
 translation-type: tm+mt
-source-git-commit: 68d910cd092fccb599c361f24daff80460129e1c
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '290'
 ht-degree: 1%
 
 ---
@@ -19,17 +19,17 @@ ht-degree: 1%
 * 確保因故障而清除的任何錯誤不會生成隱藏原始問題的錯誤。
 
 * 當首次使用新的[!DNL Asset Compute Service]整合啟動開發人員工具時，由於可能未完整設定「資產計算事件日誌」，因此第一個處理請求可能會失敗。 請等待一段時間，以便日誌設定，然後再發送另一個請求。
-* 如果您在傳送資產計算`/register`或`/process`請求時發生錯誤，請確定所有必要的API都新增至Adobe I/O專案和工作區，即資產計算、IO事件、IO事件管理和執行階段。
+* 如果您在傳送資產計算`/register`或`/process`請求時遇到錯誤，請確定所有必要的API都已新增至[!DNL Adobe I/O]專案和工作區，即資產計算、IO事件、IO事件管理和執行階段。
 
-## 透過Adobe I/O CLI登入問題{#login-via-aio-cli}
+## 通過[!DNL Adobe I/O] CLI {#login-via-aio-cli}登錄問題
 
-如果您通過Adobe I/O CLI](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)登入[!DNL Adobe Developer Console] [時遇到問題，請手動新增開發、測試和部署自訂應用程式所需的憑證：
+如果您通過 [!DNL Adobe I/O] CLI](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)登錄[!DNL Adobe Developer Console] [時遇到問題，請手動添加開發、測試和部署自定義應用程式所需的憑據：
 
 1. 導覽至[Adobe Developer Console](https://console.adobe.io/)上的Firefly專案和工作區，然後從右上角按&#x200B;**[!UICONTROL Download]**。 開啟此檔案，並將此JSON儲存至您機器上的安全位置。
 
 1. 導覽至Firefly應用程式中的ENV檔案。
 
-1. 新增Adobe I/O Runtime認證。 從下載的JSON取得Adobe I/O Runtime認證。 憑據位於`project.workspace.services.runtime`下。 在`AIO_runtime_XXX`變數中新增I/O Runtime憑證：
+1. 新增[!DNL Adobe I/O]執行階段憑證。 從下載的JSON取得[!DNL Adobe I/O] A Runtime認證。 憑據位於`project.workspace.services.runtime`下。 在`AIO_runtime_XXX`變數中新增[!DNL Adobe I/O]執行階段憑證：
 
    ```json
    AIO_runtime_auth=
