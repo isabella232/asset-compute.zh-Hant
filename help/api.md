@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 建立自訂應用程式的HTTP API。'
 translation-type: tm+mt
-source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '2921'
+source-wordcount: '2906'
 ht-degree: 2%
 
 ---
@@ -68,11 +68,11 @@ API的使用僅限於開發用途。 開發自訂應用程式時，API會以內�
    * metascope:`asset_compute_meta`
    * 範圍：`asset_compute,read_organizations`
 
-* Adobe I/O活動
+* [!DNL Adobe I/O] 事件
    * metascope:`event_receiver_api`
    * 範圍：`event_receiver,event_receiver_api`
 
-* Adobe I/O管理API
+* [!DNL Adobe I/O] 管理API
    * metascope:`ent_adobeio_sdk`
    * 範圍：`adobeio_api,additional_info.roles,additional_info.projectedProductContext`
 
@@ -322,7 +322,7 @@ HTTP狀態代碼為：
 
 * **401未授權**:當請求沒有有效驗 [證](#authentication-and-authorization)。範例可能是無效的存取Token或無效的API金鑰。
 * **403禁止**:當請求沒有有效的授 [權](#authentication-and-authorization)。範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）並未訂閱所有必要服務。
-* **429請求太多**:當系統由此客戶端或一般情況過載時。客戶端可以使用[指數回退](https://en.wikipedia.org/wiki/Exponential_backoff)重試。 屍體是空的。
+* **429請求太多**:當系統由此客戶端或通常由此客戶端過載時。客戶端可以使用[指數回退](https://en.wikipedia.org/wiki/Exponential_backoff)重試。 屍體是空的。
 * **4xx錯誤**:發生其他客戶機錯誤時。通常會傳回JSON回應，例如此回應，但並非所有錯誤都能保證：
 
    ```json
@@ -412,9 +412,9 @@ PNG格式會用作浮水印。
 
 ## 非同步事件{#asynchronous-events}
 
-轉譯處理完成後或發生錯誤時，會將事件傳送至[Adobe I/O Events Journal](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md)。 客戶必須監聽通過[/register](#register)提供的日誌URL。 日誌響應包括一個`event`陣列，該陣列由每個事件的一個對象組成，其中`event`欄位包括實際事件有效負荷。
+一旦格式副本的處理完成或發生錯誤時，事件便會傳送至[[!DNL Adobe I/O] 事件日誌](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md)。 客戶必須監聽通過[/register](#register)提供的日誌URL。 日誌響應包括一個`event`陣列，該陣列由每個事件的一個對象組成，其中`event`欄位包括實際事件有效負荷。
 
-[!DNL Asset Compute Service]中所有事件的Adobe I/O事件類型為`asset_compute`。 日記帳只會自動訂閱此事件類型，而且不需要再根據Adobe I/O事件類型進行篩選。 服務特定事件類型在事件的`type`屬性中可用。
+[!DNL Adobe I/O][!DNL Asset Compute Service]的所有事件的事件類型為`asset_compute`。 日記帳只會自動訂閱此事件類型，並且不再需要根據[!DNL Adobe I/O]事件類型進行篩選。 服務特定事件類型在事件的`type`屬性中可用。
 
 ### 事件類型{#event-types}
 
