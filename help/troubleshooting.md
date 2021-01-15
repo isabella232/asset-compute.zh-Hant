@@ -2,9 +2,9 @@
 title: 疑難排解 [!DNL Asset Compute Service].
 description: 使用 [!DNL Asset Compute Service]疑難排解自訂應用程式並除錯。
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '288'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 * 確保因故障而清除的任何錯誤不會生成隱藏原始問題的錯誤。
 
 * 當首次使用新的[!DNL Asset Compute Service]整合啟動開發人員工具時，由於可能未完整設定「資產計算事件日誌」，因此第一個處理請求可能會失敗。 請等待一段時間，以便日誌設定，然後再發送另一個請求。
-* 如果您在傳送資產計算`/register`或`/process`請求時遇到錯誤，請確定所有必要的API都已新增至[!DNL Adobe I/O]專案和工作區，即資產計算、IO事件、IO事件管理和執行階段。
+* 如果您在傳送資產計算`/register`或`/process`請求時發生錯誤，請確定所有必要的API已新增至[!DNL Adobe I/O]專案和工作區，即資產計算、[!DNL Adobe I/O]事件、[!DNL Adobe I/O]事件管理和[!DNL Adobe I/O]執行階段。
 
 ## 通過[!DNL Adobe I/O] CLI {#login-via-aio-cli}登錄問題
 
