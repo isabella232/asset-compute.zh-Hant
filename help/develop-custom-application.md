@@ -2,9 +2,9 @@
 title: 開發 [!DNL Asset Compute Service]。
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -282,7 +282,7 @@ const key = params.secretKey;
 
 Runtime中動作的預設逾時為一分鐘，但可設定`timeout`限制（以毫秒為單位）來增加。 如果您希望處理較大的檔案，請增加此次。 請考慮下載來源、處理檔案及上傳轉譯所需的總時間。 如果動作逾時，例如在指定逾時限制之前未傳回啟動，則執行階段會放棄容器，而不會重複使用它。
 
-資產計算應用程式在性質上往往與網路和磁碟IO綁定。 必須先下載來源檔案，處理常常會耗費IO，然後產生的轉譯會再次上傳。
+資產計算應用程式的性質通常是網路和磁碟輸入或輸出綁定。 必須先下載來源檔案，處理通常需要耗費大量資源，然後會重新上傳產生的轉譯。
 
 動作容器可用的記憶體由`memorySize`指定，單位為MB。 目前這也定義了容器可存取的CPU數量，最重要的是，它是使用Runtime成本的關鍵元素（較大容器的成本較高）。 當您的處理需要更多記憶體或CPU時，請在此處使用較大的值，但請小心不要浪費資源，因為容器越大，總體吞吐量越低。
 
