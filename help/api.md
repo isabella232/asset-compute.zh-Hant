@@ -1,8 +1,8 @@
 ---
-title: '[!DNL Asset Compute Service] HTTP API。'
+title: '[!DNL Asset Compute Service] HTTP API'
 description: '[!DNL Asset Compute Service] 建立自訂應用程式的HTTP API。'
 translation-type: tm+mt
-source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '2906'
 ht-degree: 2%
@@ -100,7 +100,7 @@ API的使用僅限於開發用途。 開發自訂應用程式時，API會以內�
 |-----------------------|------------------------------------------------------|
 | MIME類型 | `application/json` |
 | 頁首 `X-Request-Id` | 與`X-Request-Id`請求標題相同，或是唯一產生的標題。 用於識別跨系統的請求和／或支援請求。 |
-| 響應體 | 具有`journal`、`ok`及／或`requestId`欄位的JSON物件。 |
+| 響應體 | 具有`journal`、`ok`和／或`requestId`欄位的JSON物件。 |
 
 HTTP狀態代碼為：
 
