@@ -1,8 +1,8 @@
 ---
-title: 設定 [!DNL Asset Compute Service]所需的開發環境。
+title: 設定 [!DNL Asset Compute Service]所需的開發環境
 description: ' [!DNL Asset Compute Service] 的開發人員環境設定，以開始建立和測試自訂代碼。'
 translation-type: tm+mt
-source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '372'
 ht-degree: 0%
