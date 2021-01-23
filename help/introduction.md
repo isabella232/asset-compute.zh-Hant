@@ -1,8 +1,8 @@
 ---
-title: ' [!DNL Asset Compute Service]簡介。'
+title: ' [!DNL Asset Compute Service]簡介'
 description: '[!DNL Asset Compute Service] 是雲端原生資產處理服務，可降低複雜性並改善可擴充性。'
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
