@@ -1,8 +1,8 @@
 ---
-title: ' [!DNL Asset Compute Service]的發行說明。'
+title: ' [!DNL Asset Compute Service]的發行說明'
 description: ' [!DNL Asset Compute Service]中的新功能、增強功能和已知問題。'
 translation-type: tm+mt
-source-git-commit: c57867cd896e4ccb9402e6eeb0eea133faaa0e5d
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '191'
 ht-degree: 0%
