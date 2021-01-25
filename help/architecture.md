@@ -1,8 +1,8 @@
 ---
-title: ' [!DNL Asset Compute Service]的體系結構。'
+title: ' [!DNL Asset Compute Service]的架構'
 description: 'API、應用程式和SDK如何搭配運作，以提供雲端原生資產處理服務。 [!DNL Asset Compute Service] '
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
