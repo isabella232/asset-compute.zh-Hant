@@ -2,9 +2,9 @@
 title: 開發 [!DNL Asset Compute Service]
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
+source-git-commit: 33b72b164faeda2dd425656209790f019ccec96e
 workflow-type: tm+mt
-source-wordcount: '1562'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -96,11 +96,14 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
 
-1. 如果`console.json`不直接在Firefly應用程式的根目錄中，請新增Adobe Developer Console整合JSON檔案的絕對路徑。 這是您專案工作區中下載的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案。 或者，您也可以使用命令`aio app use <path_to_console_json>` ，而不是將路徑添加到ENV檔案。
+1. 從Adobe Developer Console下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案以`<namespace>-<workspace>.json`作為檔案名下載。 執行下列任一項作業：
 
-   ```conf
-   ASSET_COMPUTE_INTEGRATION_FILE_PATH=
-   ```
+   * 將檔案重新命名為`config.json`，並將它移至專案的根目錄中。
+   * 或者，您可以新增Adobe Developer Console整合JSON檔案的絕對路徑。 這是您專案工作區中下載的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案。
+
+      ```conf
+      ASSET_COMPUTE_INTEGRATION_FILE_PATH=
+      ```
 
 1. 新增S3或Azure儲存憑證。 您只需要存取一個雲端儲存解決方案。
 
@@ -116,6 +119,10 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    AZURE_STORAGE_KEY=
    AZURE_STORAGE_CONTAINER_NAME=
    ```
+
+>[!TIP]
+>
+>`config.json`檔案包含憑據。 從您的專案中，將JSON檔案新增至您的`.gitignore`檔案，以防止共用檔案。 同樣的情況也適用於。env和。aio檔案。
 
 ## 執行應用程式{#run-custom-application}
 
