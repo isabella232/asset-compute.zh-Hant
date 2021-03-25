@@ -2,7 +2,7 @@
 title: 開發 [!DNL Asset Compute Service]
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 translation-type: tm+mt
-source-git-commit: 33b72b164faeda2dd425656209790f019ccec96e
+source-git-commit: 7ae47fdb7ff91e1388d2037d90abe35fe5218216
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 1. 若要建立自訂應用程式，請[建立Firefly應用程式](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 若要這麼做，請在您的終端中執行`aio app init <app-name>`。
 
-   如果您尚未登入，此命令會提示瀏覽器要求您使用Adobe ID登入[Adobe Developer Console](https://console.adobe.io/)。 有關從cli登入的詳細資訊，請參閱[此處](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)。
+   如果您尚未登入，此命令會提示瀏覽器要求您使用您的Adobe ID登入[Adobe開發人員主控台](https://console.adobe.io/)。 有關從cli登入的詳細資訊，請參閱[此處](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)。
 
    Adobe建議您登入。 如果您有問題，請依照[指示建立應用程式，而不登入](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)。
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
    請在這裡閱讀有關Firefly應用程式[主要元件的資訊。](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application)
 
-   範本應用程式運用我們的[資產計算SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載和協調應用程式轉譯，因此開發人員只需實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式碼的位置。
+   範本應用程式運用我們的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載和協調應用程式轉譯，因此開發人員只需建置自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式碼的位置。
 
 如需自訂應用程式的範例和構想，請參閱[範例自訂應用程式](#try-sample)。
 
@@ -82,7 +82,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->這與[!DNL Adobe Experience Manager]的雲端儲存區不同，是[!DNL Cloud Service]。 它僅適用於使用資產計算開發人員工具進行開發和測試。
+>這與[!DNL Adobe Experience Manager]的雲端儲存區不同，是[!DNL Cloud Service]。 它僅適用於使用Asset compute開發人員工具進行開發與測試。
 
 請務必存取[支援的雲端儲存容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可視需要由多位開發人員跨不同專案共用。
 
@@ -96,10 +96,10 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
 
-1. 從Adobe Developer Console下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案以`<namespace>-<workspace>.json`作為檔案名下載。 執行下列任一項作業：
+1. 從Adobe開發人員主控台下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案以`<namespace>-<workspace>.json`作為檔案名下載。 執行下列任一項作業：
 
-   * 將檔案重新命名為`config.json`，並將它移至專案的根目錄中。
-   * 或者，您可以新增Adobe Developer Console整合JSON檔案的絕對路徑。 這是您專案工作區中下載的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案。
+   * 將檔案重新命名為`console.json`，並將它移至專案的根目錄中。
+   * 或者，您也可以將絕對路徑新增至「Adobe開發人員主控台」整合JSON檔案。 這是您專案工作區中下載的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案。
 
       ```conf
       ASSET_COMPUTE_INTEGRATION_FILE_PATH=
@@ -126,7 +126,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 ## 執行應用程式{#run-custom-application}
 
-在使用資產計算開發人員工具執行應用程式之前，請正確設定[認證](#developer-tool-credentials)。
+在使用Asset compute開發人員工具執行應用程式之前，請正確設定[認證](#developer-tool-credentials)。
 
 若要在開發人員工具中執行應用程式，請使用`aio app run`命令。 它會將動作部署至「[!DNL Adobe I/O]執行階段」，並在您的本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式要求。 以下是範例轉譯請求：
 
@@ -141,11 +141,11 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->請勿將`--local`標幟與`run`命令搭配使用。 它無法與[!DNL Asset Compute]自訂應用程式和資產計算開發人員工具搭配使用。 自訂應用程式由[!DNL Asset Compute Service]呼叫，無法存取開發人員本機電腦上執行的動作。
+>請勿將`--local`標幟與`run`命令搭配使用。 它無法用於[!DNL Asset Compute]自訂應用程式和Asset compute開發人員工具。 自訂應用程式由[!DNL Asset Compute Service]呼叫，無法存取開發人員本機電腦上執行的動作。
 
 請參閱[此處](test-custom-application.md)如何測試和除錯應用程式。 當您完成自訂應用程式的開發後，[會部署自訂應用程式](deploy-custom-application.md)。
 
-## 試用Adobe {#try-sample}提供的範例應用程式
+## 試用Adobe{#try-sample}提供的範例應用程式
 
 以下是自訂應用程式的範例：
 
@@ -221,9 +221,9 @@ exports.main = worker(async function (source, rendition) {
 
 ## 驗證和授權支援{#authentication-authorization-support}
 
-根據預設，Asset Compute自訂應用程式隨附Firefly應用程式的授權與驗證檢查。 通過將`require-adobe-auth`注釋設定為`manifest.yml`中的`true`來啟用此功能。
+依預設，Asset compute自訂應用程式會隨附Firefly應用程式的授權和驗證檢查。 通過將`require-adobe-auth`注釋設定為`manifest.yml`中的`true`來啟用此功能。
 
-### 存取其他Adobe API {#access-adobe-apis}
+### 存取其他AdobeAPI {#access-adobe-apis}
 
 <!-- TBD: Revisit this section. Where do we document console workspace creation?
 -->
@@ -285,14 +285,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-由於資產計算應用程式通常會進行更廣泛的處理，因此您更可能必須調整這些限制，以獲得最佳效能（大到足以處理二進位資產）和效率（而不會因為未使用的容器記憶體而浪費資源）。
+由於Asset compute應用程式通常會進行更廣泛的處理，因此更可能必須調整這些限制，以獲得最佳效能（大到足以處理二進位資產）和效率（而不會因為未使用的容器記憶體而浪費資源）。
 
 Runtime中動作的預設逾時為一分鐘，但可設定`timeout`限制（以毫秒為單位）來增加。 如果您希望處理較大的檔案，請增加此次。 請考慮下載來源、處理檔案及上傳轉譯所需的總時間。 如果動作逾時，例如在指定逾時限制之前未傳回啟動，則執行階段會放棄容器，而不會重複使用它。
 
-資產計算應用程式的性質通常是網路和磁碟輸入或輸出綁定。 必須先下載來源檔案，處理通常需要耗費大量資源，然後會重新上傳產生的轉譯。
+Asset compute應用程式從本質上看往往是網路和磁碟輸入或輸出綁定。 必須先下載來源檔案，處理通常需要耗費大量資源，然後會重新上傳產生的轉譯。
 
 動作容器可用的記憶體由`memorySize`指定，單位為MB。 目前這也定義了容器可存取的CPU數量，最重要的是，它是使用Runtime成本的關鍵元素（較大容器的成本較高）。 當您的處理需要更多記憶體或CPU時，請在此處使用較大的值，但請小心不要浪費資源，因為容器越大，總體吞吐量越低。
 
-此外，使用`concurrency`設定可控制容器內動作並行性。 這是單個容器（相同動作）所獲取的並行啟動次數。 在此模型中，動作容器就像Node.js伺服器，可接收多個並行請求，但最高限制為此。 如果未設定，則執行階段中的預設值為200，這對較小的Firefly動作非常有用，但對於資產計算應用程式而言，由於其本機處理和磁碟活動較密集，因此通常會過大。 某些應用程式（視其實作而定）也可能無法與並行活動搭配運作。 Asset Compute SDK可將檔案寫入不同的唯一資料夾，以確保個別啟動。
+此外，使用`concurrency`設定可控制容器內動作並行性。 這是單個容器（相同動作）所獲取的並行啟動次數。 在此模型中，動作容器就像Node.js伺服器，可接收多個並行請求，但最高限制為此。 如果未設定，則執行階段中的預設值為200，這對較小的Firefly動作非常有用，但由於Asset compute應用程式的本機處理和磁碟活動較為密集，因此通常會過大。 某些應用程式（視其實作而定）也可能無法與並行活動搭配運作。 asset computeSDK可將檔案寫入不同的唯一資料夾，以確保個別啟動。
 
 測試應用程式，以找出`concurrency`和`memorySize`的最佳數目。 較大的容器=記憶體限制較高可能允許更多併發，但流量較低也可能會浪費。
