@@ -1,14 +1,14 @@
 ---
 title: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式
 description: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式。
+exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
 translation-type: tm+mt
-source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
+source-git-commit: 9bc1534671c81a05798f98ae556d348bc771d975
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
-
 
 # 測試自訂應用程式{#test-debug-custom-worker}並除錯
 
@@ -21,18 +21,18 @@ $ aio app test
 ```
 
 <!-- TBD
-To run tests for a custom application, run `adobe-asset-compute test-worker` command in the root of the custom application application application.
+To run tests for a custom application, run `aio asset-compute test-worker` command at the root of the custom application application.
 
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-如下所述，此框架會為項目中的「資產計算」應用程式操作運行自定義單元測試框架。 它通過`package.json`檔案中的配置進行連接。 您也可以進行JavaScript單元測試，例如Jest。 `aio app test` 執行兩者。
+如下所述，此框架會為項目中的Asset compute應用程式操作運行自定義單元測試框架。 它通過`package.json`檔案中的配置進行連接。 您也可以進行JavaScript單元測試，例如Jest。 `aio app test` 執行兩者。
 
 [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency)外掛程式已內嵌為自訂應用程式應用程式中的開發相依性，因此不需要將它安裝在組建／測試系統上。
 
 ### 應用單元測試框架{#unit-test-framework}
 
-Asset Compute應用程式單元測試架構可讓您測試應用程式，毋需編寫任何程式碼。 它依賴於應用程式的源到轉譯檔案原則。 必須設定特定的檔案和檔案夾結構，以定義測試來源檔案、選用參數、預期的轉譯和自訂驗證指令碼的測試案例。 依預設，會比較轉譯的位元組等式。 此外，使用簡單的JSON檔案，可輕鬆模擬外部HTTP服務。
+asset compute應用單元測試框架允許無需編寫任何代碼即可測試應用程式。 它依賴於應用程式的源到轉譯檔案原則。 必須設定特定的檔案和檔案夾結構，以定義測試來源檔案、選用參數、預期的轉譯和自訂驗證指令碼的測試案例。 依預設，會比較轉譯的位元組等式。 此外，使用簡單的JSON檔案，可輕鬆模擬外部HTTP服務。
 
 ### 新增測試{#add-tests}
 
@@ -155,7 +155,7 @@ tests/
 }
 ```
 
-請參閱[資產計算錯誤原因](https://github.com/adobe/asset-compute-commons#error-reasons)的完整清單和說明。
+請參閱[Asset compute錯誤原因](https://github.com/adobe/asset-compute-commons#error-reasons)的完整清單和說明。
 
 ## 對自定義應用程式{#debug-custom-worker}進行調試
 
@@ -173,8 +173,8 @@ tests/
 1. 新增至您的使用者設定JSON檔案。 它會持續使用舊的VS程式碼除錯程式，而新除錯程式的wskdebug有[某些問題](https://github.com/apache/openwhisk-wskdebug/issues/74):`"debug.javascript.usePreview": false`。
 1. 關閉透過`aio app run`開啟的任何應用程式例項。
 1. 使用`aio app deploy`部署最新代碼。
-1. 僅使用`npx adobe-asset-compute devtool`執行資產計算設備工具。 保持開放。
-1. 在VS代碼編輯器中，將以下調試配置添加到`launch.json`:
+1. 僅使用`aio asset-compute devtool`執行Asset computeDevtool。 保持開放。
+1. 在VS代碼編輯器中，將以下調試配置添加到`launch.json`中：
 
    ```json
    {
@@ -195,7 +195,7 @@ tests/
    }
    ```
 
-   從`aio app deploy`的輸出中獲取ACTION NAME。 它看起來像`Your deployed actions -> TypicalCoffeeCat-0.0.1/__secured_worker`。
+   從`aio app deploy`的輸出中讀取`ACTION NAME`。
 
 1. 從運行／調試配置中選擇`wskdebug worker` ，然後按播放表徵圖。 等待啟動，直到在&#x200B;**[!UICONTROL 調試控制台]**&#x200B;窗口中顯示&#x200B;**[!UICONTROL 準備激活]**。
 
