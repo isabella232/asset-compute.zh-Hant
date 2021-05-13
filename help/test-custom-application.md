@@ -2,10 +2,9 @@
 title: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式
 description: 測試和除錯 [!DNL Asset Compute Service] 自訂應用程式。
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-translation-type: tm+mt
-source-git-commit: 9bc1534671c81a05798f98ae556d348bc771d975
+source-git-commit: ebc0d717b3f6fc4518f4a79cd44ebe8fdcf9ec6a
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '811'
 ht-degree: 0%
 
 ---
@@ -138,6 +137,10 @@ tests/
 
 錯誤測試案例不應包含預期的`rendition.*`檔案，而且應在`params.json`檔案中定義預期的`errorReason`。
 
+>[!NOTE]
+>
+>如果測試案例不包含預期的`rendition.*`檔案，且未在`params.json`檔案中定義預期的`errorReason`，則假設它是任何`errorReason`的錯誤案例。
+
 錯誤測試案例結構：
 
 ```json
@@ -201,7 +204,7 @@ tests/
 
 1. 在Devtool中按一下&#x200B;**[!UICONTROL run]**。 您可以在VS代碼編輯器中看到執行的操作，並開始顯示日誌。
 
-1. 在程式碼中設定中斷點，再執行一次，就會到達。
+1. 在程式碼中設定中斷點，再執行一次，就會點到。
 
 任何程式碼變更都會即時載入，並在下次啟動時立即生效。
 
