@@ -1,36 +1,35 @@
 ---
 title: ' [!DNL Asset Compute Service]簡介'
 description: '[!DNL Asset Compute Service] 是雲端原生資產處理服務，可降低複雜性並改善可擴充性。'
-translation-type: tm+mt
-source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
+exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
+source-git-commit: 187a788d036f33b361a0fd1ca34a854daeb4a101
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
 
 ---
 
+# [!DNL Asset Compute Service]概述 {#overview}
 
-# [!DNL Asset Compute Service] {#overview}概觀
+[!DNL Asset Compute Service] 是可擴充的數位資產處 [!DNL Adobe Experience Cloud] 理服務。它可以將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
 
-[!DNL Asset Compute Service] 是處理數位資產的可擴充 [!DNL Adobe Experience Cloud] 且可擴充的服務。它可將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
+開發人員可外掛自訂資產應用程式（也稱為自訂背景工作），以處理自訂使用案例。 該服務在[!DNL Adobe I/O]運行時運行。 可透過在Node.js中撰寫的[!DNL Project Firefly]無標題應用程式延伸。 這些功能可執行自訂操作，例如呼叫外部API以執行影像操作或運用[!DNL Adobe Sensei]支援。
 
-開發人員可以外掛自訂資產應用程式（也稱為自訂工作者），以處理自訂使用案例。 服務在[!DNL Adobe I/O]運行時運行。 它可透過以Node.js編寫的[!DNL Project Firefly]無頭應用程式延伸。 這些作業可以執行自訂作業，例如呼叫外部API以執行影像作業或運用[!DNL Adobe Sensei]支援。
-
-[!DNL Project Firefly] 是在執行時期上建立和部署自訂Web應用程式 [!DNL Adobe I/O] 以擴充Adobe Experience Cloud解決方案的架構。若要建立自訂應用程式，開發人員可運用[!DNL React Spectrum]（Adobe的UI工具套件）、建立微型服務、建立自訂事件和協調API。 請參閱[Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)的檔案。
-
->[!NOTE]
->
->目前，[!DNL Asset Compute Service]只能透過[!DNL Experience Manager]使用為[!DNL Cloud Service]。 管理員會建立可呼叫[!DNL Asset Compute Service]的處理設定檔，以傳遞資產以供處理。 請參閱[使用資產微服務和處理配置檔案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
-
-## [!DNL Asset Compute Service] {#possible-use-cases-benefits}支援的使用案例
-
-[!DNL Asset Compute Service] 支援一些常見的業務使用案例，如基本影像處理；Adobe應用程式特定轉換；以及自訂應用程式的建立，以協調複雜的業務需求。
-
-您可以使用[!DNL Asset Compute] web service來產生不同檔案類型的縮圖，並針對[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)產生高品質的影像轉譯。 請參閱透過自訂設定](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)支援的使用案例。[
+[!DNL Project Firefly] 是在執行階段上建置和部署自訂Web應用程式的架 [!DNL Adobe I/O] 構，以擴充Adobe Experience Cloud解決方案。若要建立自訂應用程式，開發人員可以運用[!DNL React Spectrum](Adobe的UI工具包)、建立微服務、建立自訂事件和協調API。 請參閱Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)的[檔案。
 
 >[!NOTE]
 >
->服務不提供資產儲存空間。 使用者會提供它，並提供雲端儲存空間中來源和轉譯檔案位置的參考。
+>目前，[!DNL Asset Compute Service]只能透過[!DNL Experience Manager]作為[!DNL Cloud Service]使用。 管理員建立處理設定檔，可呼叫[!DNL Asset Compute Service]以傳遞資產以進行處理。 請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+
+## 支援的[!DNL Asset Compute Service] {#possible-use-cases-benefits}使用案例
+
+[!DNL Asset Compute Service] 支援一些常見的業務使用案例，如基本影像處理；Adobe應用程式特定轉換；和定制應用程式的建立，以便協調複雜的業務需求。
+
+您可以使用[!DNL Asset Compute] Web服務為不同檔案類型生成縮略圖，為[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)生成高質量的影像呈現。 請參閱透過自訂設定支援的[使用案例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+
+>[!NOTE]
+>
+>服務未提供資產儲存空間。 使用者可提供該檔案，並提供雲端儲存空間中來源和轉譯檔案位置的參考。
 
 <!-- TBD: Should this be mentioned in the docs?
 
@@ -45,10 +44,10 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 >
->* [資產微服務資產處理概 [!DNL Adobe Experience Manager] 述a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html).
+>* [資產微服務的資產處理概 [!DNL Adobe Experience Manager] 述a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html).
 >* [Project Firefly的檔案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
 >* [支援處理的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
->* [資產計算服務發行說明](release-notes.md)
+>* [asset compute服務發行說明](release-notes.md)
 
 
 <!-- **TBD:**
