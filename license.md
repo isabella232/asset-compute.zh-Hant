@@ -1,17 +1,16 @@
 ---
-source-git-commit: 324f414164ccbb712e7197ddc68075ea9c238cae
+source-git-commit: 7f59571ebe0d065c4e11cda52718a0febd71b62b
 workflow-type: tm+mt
-translation-type: tm+mt
 source-wordcount: '170'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
-# MIT授權
+# MIT 授權
 
-©版權所有2020 Adobe。 版權所有。
+© Copyright 2021 Adobe. All rights reserved.
 
-茲免費准許任何取得本軟體及相關檔案檔案（「本軟體」）之副本之人員，不受限制處理本軟體，包括但不限於使用、複製、修改、合併、發佈、分發、再授權及／或銷售本軟體之權利，並准許獲得本軟體之人員，但須受下列條件約束：
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-上述著作權聲明及本許可聲明應包含在本軟體之所有副本或大部分中。
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-本軟體依「現狀」提供，不提供任何明示或默示之擔保，包括但不限於適銷性、特定用途之適用性及非侵權之擔保。 在任何情況下，作者或著作權持有人概不負責因合約、侵權或其他訴訟、因合約、侵權或其他訴訟與本軟體之關係，或與本軟體之使用或其他交易之關係。
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
