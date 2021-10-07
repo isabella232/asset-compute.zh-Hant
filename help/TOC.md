@@ -7,9 +7,9 @@ role: Developer
 user-guide-title: asset compute服務指南
 user-guide-description: 本檔案涵蓋 [!DNL Asset Compute Service] 工作，例如如何開發、管理、部署和疑難排解自訂程式碼。
 breadcrumb-title: asset compute服務指南
-source-git-commit: c4f224a2ee99e78018a7a3f43ec59907f05ea4ef
+source-git-commit: a2460a0719f8c585ed72e44c904aa0df33301032
 workflow-type: tm+mt
-source-wordcount: '98'
+source-wordcount: '96'
 ht-degree: 10%
 
 ---
@@ -19,7 +19,6 @@ ht-degree: 10%
 
 + [asset compute服務使用手冊](home.md)
 + [概覽](introduction.md)
-+ [發行說明](release-notes.md)
 + [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
 + [架構](architecture.md)
 + [API參考](api.md)
