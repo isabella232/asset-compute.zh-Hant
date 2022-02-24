@@ -1,35 +1,35 @@
 ---
-title: ' [!DNL Asset Compute Service]簡介'
-description: '[!DNL Asset Compute Service] 是雲端原生資產處理服務，可降低複雜性並改善可擴充性。'
+title: 導言 [!DNL Asset Compute Service]
+description: '"[!DNL Asset Compute Service] 是一種雲本地資產處理服務，可降低複雜性並提高可擴充性。」'
 exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
-source-git-commit: a2460a0719f8c585ed72e44c904aa0df33301032
+source-git-commit: 93d3b407c8875888f03bec673d0a677a3205cfbb
 workflow-type: tm+mt
 source-wordcount: '307'
-ht-degree: 0%
+ht-degree: 6%
 
 ---
 
-# [!DNL Asset Compute Service]概述 {#overview}
+# 概述 [!DNL Asset Compute Service] {#overview}
 
-[!DNL Asset Compute Service] 是可擴充的數位資產處 [!DNL Adobe Experience Cloud] 理服務。它可以將影像、視訊、檔案和其他檔案格式轉換為不同的轉譯，包括縮圖、擷取的文字和中繼資料，以及封存。
+[!DNL Asset Compute Service] 是可擴展的 [!DNL Adobe Experience Cloud] 處理數字資產。 它可以將影像、視頻、文檔和其他檔案格式轉換為不同的格式副本，包括縮略圖、提取的文本和元資料，以及存檔。
 
-開發人員可外掛自訂資產應用程式（也稱為自訂背景工作），以處理自訂使用案例。 該服務在[!DNL Adobe I/O]運行時運行。 可透過在Node.js中撰寫的[!DNL Project Firefly]無標題應用程式延伸。 這些功能可執行自訂操作，例如呼叫外部API以執行影像操作或運用[!DNL Adobe Sensei]支援。
+開發人員可以插入自定義資產應用程式（也稱為自定義工作程式）以解決自定義使用案例。 服務在 [!DNL Adobe I/O] 運行時。 它是可擴展的 [!DNL Project Firefly] Node.js中寫入的無頭應用。 這些操作可以執行自定義操作，如調用外部API來執行映像操作或利用 [!DNL Adobe Sensei] 支援。
 
-[!DNL Project Firefly] 是在執行階段上建置和部署自訂Web應用程式的架 [!DNL Adobe I/O] 構，以擴充Adobe Experience Cloud解決方案。若要建立自訂應用程式，開發人員可以運用[!DNL React Spectrum](Adobe的UI工具包)、建立微服務、建立自訂事件和協調API。 請參閱Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)的[檔案。
-
->[!NOTE]
->
->目前，[!DNL Asset Compute Service]只能透過[!DNL Experience Manager]作為[!DNL Cloud Service]使用。 管理員建立處理設定檔，可呼叫[!DNL Asset Compute Service]以傳遞資產以進行處理。 請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
-
-## [!DNL Asset Compute Service]支援的使用案例 {#possible-use-cases-benefits}
-
-[!DNL Asset Compute Service] 支援一些常見的業務使用案例，如基本影像處理；Adobe應用程式特定轉換；和定制應用程式的建立，以便協調複雜的業務需求。
-
-您可以使用[!DNL Asset Compute] Web服務為不同檔案類型生成縮略圖，為[支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)生成高質量的影像呈現。 請參閱透過自訂設定支援的[使用案例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+[!DNL Project Firefly] 是一個框架，用於在 [!DNL Adobe I/O] 擴展Adobe Experience Cloud解決方案。 要建立自定義應用程式，開發人員可以 [!DNL React Spectrum] (Adobe的UI工具包)、建立微服務、建立自定義事件和協調API。 請參閱 [Project Firefly文檔](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
 
 >[!NOTE]
 >
->服務未提供資產儲存空間。 使用者可提供該檔案，並提供雲端儲存空間中來源和轉譯檔案位置的參考。
+>當前， [!DNL Asset Compute Service] 只能通過 [!DNL Experience Manager] 作為 [!DNL Cloud Service]。 管理員建立可調用 [!DNL Asset Compute Service] 以傳遞資產以供處理。 請參閱 [使用資產微服務和處理配置檔案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+
+## 支援的使用案例 [!DNL Asset Compute Service] {#possible-use-cases-benefits}
+
+[!DNL Asset Compute Service] 支援基本影像處理等常見業務使用案例；Adobe應用程式特定轉換；和定制應用程式建立，以協調複雜的業務要求。
+
+您可以使用 [!DNL Asset Compute] Web服務，為不同檔案類型生成縮略圖，為其提供高質量影像渲染 [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。 請參閱 [通過自定義配置支援的使用案例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+
+>[!NOTE]
+>
+>該服務不提供資產儲存。 用戶提供它，並提供對雲儲存中源檔案和格式副本檔案位置的引用。
 
 <!-- TBD: Should this be mentioned in the docs?
 
@@ -44,8 +44,8 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 >
->* [資產微服務的資產處理概 [!DNL Adobe Experience Manager] 述a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html).
->* [Project Firefly的檔案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
+>* [資產微服務資產處理概述 [!DNL Adobe Experience Manager] 作為 [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。
+>* [Project Firefly文檔](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
 >* [支援處理的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
 
 
