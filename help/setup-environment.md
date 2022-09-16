@@ -2,9 +2,9 @@
 title: 設定 [!DNL Asset Compute Service]
 description: 開發人員環境設定 [!DNL Asset Compute Service] 以開始建立和測試自訂程式碼。
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: a50a3bdb520cbe608c5710716df80ac6e3b486e5
+source-git-commit: 2b690ce37c0bac58abcb745e0b82018541434659
 workflow-type: tm+mt
-source-wordcount: '364'
+source-wordcount: '357'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
    * [Git](https://git-scm.com/)
    * [Docker Desktop](https://www.docker.com/get-started)
-   * [NodeJS](https://nodejs.org) （v12到v14 LTS，不建議使用奇數版本）和 [NPM](https://www.npmjs.com). OSX HomeBrew的用戶可以 `brew install node` 來安裝兩者。 否則，請從 [NodeJS下載頁面](https://nodejs.org/en/)
+   * [NodeJS](https://nodejs.org) （v14 LTS，不建議使用奇數版本）和 [NPM](https://www.npmjs.com). OSX HomeBrew的用戶可以 `brew install node` 來安裝兩者。 否則，請從 [NodeJS下載頁面](https://nodejs.org/en/)
    * 對於NodeJS來說，我們建議使用適合的IDE [Visual Studio代碼（VS代碼）](https://code.visualstudio.com) 因為它是調試器支援的IDE。 您可以使用任何其他IDE作為代碼編輯器，但目前尚不支援進階用法（例如debugger）
    * 安裝最新[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) (`aio`)
 
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 1. 登入 [Adobe Developer Console](https://console.adobe.io/). 確保您屬於相同 [!DNL Experience Cloud] 組織作為 [!DNL Experience Manager] as a [!DNL Cloud Service] 整合。 如需Adobe Developer Console的詳細資訊，請參閱 [主控台檔案](https://www.adobe.io/apis/experienceplatform/console/docs.html).
 
-1. [建立App Builder專案](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/first_app.md). 按一下 **[!UICONTROL 建立新專案]** > **[!UICONTROL 範本專案]**. 選取「應用程式產生器」。 它會建立含兩個工作區的新App Builder專案： `Production` 和 `Stage`. 例如，新增其他工作區 `Development`，視需要。
+1. [建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/). 按一下 **[!UICONTROL 建立新專案]** > **[!UICONTROL 範本專案]**. 選取「應用程式產生器」。 它會建立含兩個工作區的新App Builder專案： `Production` 和 `Stage`. 例如，新增其他工作區 `Development`，視需要。
 
 1. 在App Builder專案中，選取工作區並訂閱Asset compute所需的服務。 按一下 **新增至專案** > **API** 新增 `Asset Compute`, `IO Events`，和 `IO Events Management` 服務。 新增第一個API時，系統會提示建立私密金鑰。 當您需要此金鑰時，將此資訊儲存在電腦上，以便使用開發人員工具測試自訂應用程式。
 

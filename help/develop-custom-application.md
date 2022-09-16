@@ -2,7 +2,7 @@
 title: 開發對象 [!DNL Asset Compute Service]
 description: 使用 [!DNL Asset Compute Service].
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: a50a3bdb520cbe608c5710716df80ac6e3b486e5
+source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
 workflow-type: tm+mt
 source-wordcount: '1618'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 請務必將 [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) 本機安裝。
 
-1. 若要建立自訂應用程式， [建立App Builder專案](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 要執行此操作，請執行 `aio app init <app-name>` 在您的終端機中。
+1. 若要建立自訂應用程式， [建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 要執行此操作，請執行 `aio app init <app-name>` 在您的終端機中。
 
-   如果您尚未登入，此命令會提示您登入 [Adobe Developer Console](https://console.adobe.io/) 和你的Adobe ID。 請參閱 [此處](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#3-signing-in-from-cli) 有關從cli登錄的詳細資訊。
+   如果您尚未登入，此命令會提示您登入 [Adobe Developer Console](https://console.adobe.io/) 和你的Adobe ID。 請參閱 [此處](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli) 有關從cli登錄的詳細資訊。
 
-   Adobe建議您登入。 如果您有問題，請依照指示 [若要建立應用程式而不登入](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user).
+   Adobe建議您登入。 如果您有問題，請依照指示 [若要建立應用程式而不登入](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user).
 
 1. 登錄後，按照CLI中的提示操作並選擇 `Organization`, `Project`，和 `Workspace` 以用於應用程式。 選擇您在 [設定環境](setup-environment.md). 提示時 `Which extension point(s) do you wish to implement ?`，請務必選取 `DX Asset Compute Worker`:
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 按照其餘提示操作，在Visual Studio代碼（或您最喜愛的代碼編輯器）中開啟新應用程式。 其中包含自訂應用程式的架構和范常式式碼。
 
-   請在這裡閱讀 [App Builder應用程式的主要元件](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#5-anatomy-of-a-project-firefly-application).
+   請在這裡閱讀 [App Builder應用程式的主要元件](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application).
 
    範本應用程式會運用我們的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) 上傳、下載和協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 內 `actions/<worker-name>` 資料夾， `index.js` 檔案是新增自訂應用程式程式碼的位置。
 

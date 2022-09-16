@@ -2,9 +2,9 @@
 title: 了解自訂應用程式的運作方式
 description: 內部工作 [!DNL Asset Compute Service] 自訂應用程式，協助了解運作方式。
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: 07e87c57e57f18f4d6e34ca8529d5598b0b12f3d
+source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ curl -X POST \
 }
 ```
 
-此 [!DNL Asset Compute Service] 將自訂應用程式轉譯請求傳送至自訂應用程式。 它會對提供的應用程式URL使用HTTPPOST，即來自Project App Builder的安全Web動作URL。 所有要求都使用HTTPS通訊協定，以最大化資料安全性。
+此 [!DNL Asset Compute Service] 將自訂應用程式轉譯請求傳送至自訂應用程式。 它會對提供的應用程式URL使用HTTPPOST，即來自App Builder的安全Web動作URL。 所有要求都使用HTTPS通訊協定，以最大化資料安全性。
 
 此 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 由自訂應用程式使用，可處理HTTPPOST要求。 它也可處理來源的下載、上傳轉譯、傳送 [!DNL Adobe I/O] 事件和錯誤處理。
 
