@@ -2,10 +2,10 @@
 title: 設定 [!DNL Asset Compute Service]
 description: 開發人員環境設定 [!DNL Asset Compute Service] 以開始建立和測試自訂程式碼。
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: 2b690ce37c0bac58abcb745e0b82018541434659
+source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
 source-wordcount: '357'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 2%
 
 若要建立可讓您針對 [!DNL Asset Compute Service]，請遵循這些需求和指示。
 
-1. [取得存取權和憑證](https://www.adobe.io/project-firefly/docs/getting_started/#acquire-access-and-credentials) for [!DNL Project Firefly].
+1. [取得存取權和憑證](https://developer.adobe.com/app-builder/docs/getting_started/#acquire-access-and-credentials) for [!DNL Adobe Developer App Builder].
 
-1. [設定本機環境](https://www.adobe.io/project-firefly/docs/getting_started/#local-environment-set-up) 和必要的工具。
+1. [設定本機環境](https://developer.adobe.com/app-builder/docs/getting_started/#local-environment-set-up) 和必要的工具。
 
 1. 其他有助於您順利開發的工具包括：
 

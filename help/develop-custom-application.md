@@ -2,7 +2,7 @@
 title: 開發對象 [!DNL Asset Compute Service]
 description: 使用 [!DNL Asset Compute Service].
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
+source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
 source-wordcount: '1618'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
    $ aio app init <app-name>
    Retrieving information from [!DNL Adobe I/O] Console.
    ? Select Org My Adobe Org
-   ? Select Project MyFireflyProject
+   ? Select Project MyAdobe Developer App BuilderProject
    ? Which extension point(s) do you wish to implement ? (Press <space> to select, <a>
    to toggle all, <i> to invert selection)
    ❯◯ DX Experience Cloud SPA
@@ -100,7 +100,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 1. 從Adobe Developer主控台下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案下載時使用 `<namespace>-<workspace>.json` 作為檔案名。 執行下列任一項作業：
 
    * 將檔案重新命名為 `console.json` 並移到項目的根中。
-   * 您可以選擇將絕對路徑新增至Adobe Developer Console整合JSON檔案。 這是一樣的 [`console.json`](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user) 下載的檔案。
+   * 您可以選擇將絕對路徑新增至Adobe Developer Console整合JSON檔案。 這是一樣的 [`console.json`](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user) 下載的檔案。
 
       ```conf
       ASSET_COMPUTE_INTEGRATION_FILE_PATH=

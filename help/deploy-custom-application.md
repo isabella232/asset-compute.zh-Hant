@@ -2,9 +2,9 @@
 title: 部署 [!DNL Asset Compute Service] 自訂應用程式
 description: 部署 [!DNL Asset Compute Service] 自訂應用程式。
 exl-id: a68d4f59-8a8f-43b2-8bc6-19320ac8c9ef
-source-git-commit: 129651ba432b75703bc27baa7081da60302f828d
+source-git-commit: 50f69e16772cee7f79a812f2b86f0ef0221db369
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '190'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 在 [處理設定檔(於 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html) 將應用程式與 [!DNL Experience Manager] as a [!DNL Cloud Service].
 
-確認您的App Builder專案和工作區對應至 [!DNL Experience Manager] as a [!DNL Cloud Service] 您要使用動作的環境。 其開發、測試和生產環境不同。 您可以檢查 `AIO_runtime_*` 在ENV檔案中定義、位於Firefly應用程式根目錄的憑證。 例如，若要部署至 `Stage` 工作區、 `AIO_runtime_namespace` 為格式 `xxxxxx_xxxxxxxxx_stage`. 若要整合 [!DNL Experience Manager] as a [!DNL Cloud Service] 生產環境，使用Firefly中的應用程式URL `Production` 工作區。
+確認您的App Builder專案和工作區對應至 [!DNL Experience Manager] as a [!DNL Cloud Service] 您要使用動作的環境。 其開發、測試和生產環境不同。 您可以檢查 `AIO_runtime_*` 在ENV檔案中定義、位於Adobe Developer App Builder應用程式根目錄的憑證。 例如，若要部署至 `Stage` 工作區、 `AIO_runtime_namespace` 為格式 `xxxxxx_xxxxxxxxx_stage`. 若要整合 [!DNL Experience Manager] as a [!DNL Cloud Service] 生產環境，使用Adobe Developer App Builder中的應用程式URL `Production` 工作區。
 
 >[!CAUTION]
 >
