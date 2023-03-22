@@ -2,7 +2,7 @@
 title: 了解自訂應用程式的運作方式
 description: 內部工作 [!DNL Asset Compute Service] 自訂應用程式，協助了解運作方式。
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
+source-git-commit: 2af710443cdc2e5e25e105eca6e779eb58631ae9
 workflow-type: tm+mt
 source-wordcount: '751'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 請使用下圖來了解當用戶端使用自訂應用程式處理數位資產時的端對端工作流程。
 
-![自訂應用程式工作流程](assets/customworker.png)
+![自訂應用程式工作流程](assets/customworker.svg)
 
 *圖：使用 [!DNL Asset Compute Service].*
 
