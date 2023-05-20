@@ -1,6 +1,6 @@
 ---
-title: '"[!DNL Asset Compute Service] HTTP API"'
-description: '"[!DNL Asset Compute Service] HTTP API建立自定義應用程式。"'
+title: "[!DNL Asset Compute Service] HTTP API"
+description: "[!DNL Asset Compute Service] HTTP API建立自定義應用程式。"
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
 source-git-commit: 93d3b407c8875888f03bec673d0a677a3205cfbb
 workflow-type: tm+mt
@@ -35,7 +35,7 @@ API的使用僅限於開發目的。 在開發自定義應用程式時，API被�
 
 所有API都需要訪問令牌驗證。 請求必須設定以下標頭：
 
-1. `Authorization` 帶有承載令牌的頭，即技術帳戶令牌，通過 [JWT交換](https://www.adobe.io/authentication/auth-methods.html) 從AdobeDeveloper Console項目。 的 [作用域](#scopes) 下面記錄。
+1. `Authorization` 帶有承載令牌的頭，即技術帳戶令牌，通過 [JWT交換](https://www.adobe.io/authentication/auth-methods.html) Adobe Developer控制台項目。 的 [作用域](#scopes) 下面記錄。
 
 <!-- TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in Adobe I/O's GitHub repo to get a new URL.
 -->
@@ -115,7 +115,7 @@ HTTP狀態代碼為：
 
 * **401未授權**:請求無效時發生 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
 
-* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe開發者控制台項目（技術帳戶）未訂閱所有必需的服務。
+* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
 
 * **429請求過多**:當系統由此客戶端或其他客戶端過載時發生。 客戶端應使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
 * **4xx錯誤**:出現任何其他客戶端錯誤時，註冊失敗。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
@@ -171,7 +171,7 @@ HTTP狀態代碼為：
 
 * **401未授權**:請求無效時發生 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
 
-* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe開發者控制台項目（技術帳戶）未訂閱所有必需的服務。
+* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
 
 * **找不到404**:當給定憑據沒有當前註冊時發生。
 
@@ -320,7 +320,7 @@ HTTP狀態代碼為：
    ```
 
 * **401未授權**:當請求無效時 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
-* **《小行星403》**:當請求無效時 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe開發者控制台項目（技術帳戶）未訂閱所有必需的服務。
+* **《小行星403》**:當請求無效時 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
 * **429請求過多**:當系統由此客戶端或通常過載時。 客戶端可以使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
 * **4xx錯誤**:出現任何其他客戶端錯誤時。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
 
@@ -359,7 +359,7 @@ HTTP狀態代碼為：
 * 設定DPI以通過調整應用於像素的比例來調整呈現大小以用於案頭發佈。 它由 `instructions.dpi` 的子菜單。 但是，要調整影像大小以使其以不同的解析度大小相同，請使用 `convertToDpi` 的下界。
 * 調整影像的大小，使其渲染的寬度或高度在指定目標解析度(DPI)下保持與原始影像相同。 它由 `instructions.convertToDpi` 的子菜單。
 
-## 水印資產 {#add-watermark}
+## 浮水印資產 {#add-watermark}
 
 的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk) 支援向PNG、JPEG、TIFF和GIF影像檔案添加水印。 水印將按照 `watermark` 格式副本上的對象。
 
@@ -424,7 +424,7 @@ PNG格式用作水印。
 
 ### 事件屬性 {#event-attributes}
 
-| 屬性 | 類型 | 事件 | 說明 |
+| 屬性 | 類型 | Event | 說明 |
 |-------------|----------|---------------|-------------|
 | `date` | `string` | `*` | 在簡化擴展中發送事件的時間戳 [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，由JavaScript定義 [Date.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)。 |
 | `requestId` | `string` | `*` | 原始請求的請求ID `/process`，與 `X-Request-Id` 標題。 |
