@@ -1,6 +1,6 @@
 ---
-title: 為 [!DNL Asset Compute Service]
-description: 使用 [!DNL Asset Compute Service]。
+title: 為以下專案開發 [!DNL Asset Compute Service]
+description: 建立自訂應用程式，使用 [!DNL Asset Compute Service].
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
 source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
@@ -9,25 +9,25 @@ ht-degree: 0%
 
 ---
 
-# 開發自定義應用程式 {#develop}
+# 開發自訂應用程式 {#develop}
 
-在開始開發自定義應用程式之前：
+開始開發自訂應用程式之前：
 
-* 確保 [先決條件](/help/understand-extensibility.md#prerequisites-and-provisioning) 。
-* 安裝 [所需的軟體工具](/help/setup-environment.md#create-dev-environment)。
-* 請參閱 [設定環境](setup-environment.md) 以確保您已準備好建立自定義應用程式。
+* 確定所有 [必備條件](/help/understand-extensibility.md#prerequisites-and-provisioning) 符合。
+* 安裝 [必要的軟體工具](/help/setup-environment.md#create-dev-environment).
+* 另請參閱 [設定您的環境](setup-environment.md) 以確保您已準備好建立自訂應用程式。
 
-## 建立自定義應用程式 {#create-custom-application}
+## 建立自訂應用程式 {#create-custom-application}
 
-確保 [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) 本地安裝。
+請務必擁有 [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) 本機安裝。
 
-1. 要建立自定義應用程式， [建立App Builder項目](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli)。 為此，請執行 `aio app init <app-name>` 在終端上。
+1. 若要建立自訂應用程式， [建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 若要這麼做，請執行 `aio app init <app-name>` 在您的終端機中。
 
-   如果尚未登錄，此命令將提示瀏覽器要求您登錄 [Adobe Developer控制台](https://console.adobe.io/) 你的Adobe ID。 請參閱 [這裡](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli) 有關從cli登錄的詳細資訊。
+   如果您尚未登入，這個命令會提示您登入 [Adobe Developer主控台](https://console.adobe.io/) 使用您的Adobe ID。 另請參閱 [此處](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli) 以取得從cli登入的詳細資訊。
 
-   Adobe建議您登錄。 如果您有問題，請按照說明操作 [建立應用而不登錄](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)。
+   Adobe建議您登入。 如果您遇到問題，請依照指示操作 [建立應用程式而不登入](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user).
 
-1. 登錄後，按照CLI中的提示選擇 `Organization`。 `Project`, `Workspace` 的子菜單。 選擇在您 [設定環境](setup-environment.md)。 提示時 `Which extension point(s) do you wish to implement ?`，確保選擇 `DX Asset Compute Worker`:
+1. 登入後，按照CLI中的提示操作，並選取 `Organization`， `Project`、和 `Workspace` 用於應用程式。 選擇您建立時建立的專案和工作區 [設定您的環境](setup-environment.md). 出現提示時 `Which extension point(s) do you wish to implement ?`，請務必選取 `DX Asset Compute Worker`：
 
    ```sh
    $ aio app init <app-name>
@@ -40,7 +40,7 @@ ht-degree: 0%
    ◯ DX Asset Compute Worker
    ```
 
-1. 出現提示時 `Which Adobe I/O App features do you want to enable for this project?`選中 `Actions`。 確保取消選擇 `Web Assets` 選項，因為web資產使用不同的身份驗證和授權檢查。
+1. 出現以下提示時： `Which Adobe I/O App features do you want to enable for this project?`，選取 `Actions`. 請務必取消選取 `Web Assets` 選項做為網頁資產使用不同的驗證和授權檢查。
 
    ```bash
    ? Which Adobe I/O App features do you want to enable for this project?
@@ -51,7 +51,7 @@ ht-degree: 0%
    ◯ CI/CD: Include GitHub Actions based workflows for Build, Test and Deploy
    ```
 
-1. 提示時 `Which type of sample actions do you want to create?`，確保選擇 `Adobe Asset Compute Worker`:
+1. 出現提示時 `Which type of sample actions do you want to create?`，請務必選取 `Adobe Asset Compute Worker`：
 
    ```bash
    ? Which type of sample actions do you want to create?
@@ -60,53 +60,53 @@ ht-degree: 0%
    ◯ Generic
    ```
 
-1. 按照其餘提示操作，在Visual Studio代碼（或您最喜愛的代碼編輯器）中開啟新應用程式。 它包含定製應用程式的腳手架和示例代碼。
+1. 依照其餘的提示操作，並在Visual Studio Code （或您喜愛的程式碼編輯器）中開啟新的應用程式。 它包含自訂應用程式的支架和範常式式碼。
 
-   在此處閱讀有關 [App Builder應用程式的主要元件](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)。
+   請在此處閱讀 [App Builder應用程式的主要元件](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application).
 
-   模板應用程式利用了 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) 用於上傳、下載和協調應用程式格式副本，因此開發人員只需要實施自定義應用程式邏輯。 在 `actions/<worker-name>` 資料夾 `index.js` 檔案是添加自定義應用程式碼的位置。
+   範本應用程式會利用 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) 適用於應用程式轉譯的上傳、下載和協調，因此開發人員只需要實作自訂應用程式邏輯。 內部 `actions/<worker-name>` 資料夾， `index.js` 檔案是新增自訂應用程式程式碼的位置。
 
-請參閱 [示例自定義應用程式](#try-sample) 示例和自定義應用程式的想法。
+另請參閱 [自訂應用程式範例](#try-sample) 自訂應用程式的範例和想法。
 
-### 添加憑據 {#add-credentials}
+### 新增認證 {#add-credentials}
 
-在建立應用程式時登錄時，大多數App Builder憑據都會在ENV檔案中收集。 但是，使用開發人員工具需要其他憑據。
+當您在建立應用程式時登入時，系統會在ENV檔案中收集大部份App Builder認證。 不過，使用開發人員工具需要其他憑證。
 
 <!-- TBD: Check if manual setup of credentials is required.
 Manual set up of credentials is removed from troubleshooting and best practices page. Link was broken.
 If you did not log in, refer to our troubleshooting guide to [set up credentials manually](troubleshooting.md).
 -->
 
-#### 開發人員工具儲存憑據 {#developer-tool-credentials}
+#### 開發人員工具儲存憑證 {#developer-tool-credentials}
 
-用於將自定義應用程式與實際應用程式test的開發人員工具 [!DNL Asset Compute service] 需要一個雲儲存容器，用於托管test檔案以及接收和顯示應用程式生成的格式副本。
+用來測試自訂應用程式的開發人員工具，包含 [!DNL Asset Compute service] 需要雲端儲存容器來裝載測試檔案，以及接收和顯示應用程式產生的轉譯。
 
 >[!NOTE]
 >
->這與雲儲存 [!DNL Adobe Experience Manager] 作為 [!DNL Cloud Service]。 它只適用於Asset compute開發工具的開發和測試。
+>這與的雲端儲存區不同 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]. 它僅適用於使用Asset compute開發人員工具進行開發和測試。
 
-確保有權訪問 [支援的雲儲存容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可由多個開發人員根據需要跨不同項目共用。
+確定具有 [支援的雲端儲存體容器](https://github.com/adobe/asset-compute-devtool#prerequisites). 如有需要，不同專案中的多位開發人員可共用此容器。
 
-#### 將憑據添加到ENV檔案 {#add-credentials-env-file}
+#### 新增認證至ENV檔案 {#add-credentials-env-file}
 
-將開發人員工具的以下憑據添加到App Builder項目根目錄中的ENV檔案：
+將開發人員工具的下列認證新增至App Builder專案根目錄中的ENV檔案：
 
-1. 將服務添加到App Builder項目時建立的私鑰檔案的絕對路徑：
+1. 將絕對路徑新增至在App Builder專案中新增服務時所建立的私密金鑰檔案：
 
    ```conf
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
 
-1. 從Adobe Developer控制台下載檔案。 轉到項目的根目錄，然後按一下右上角的「Download All（全部下載）」。 檔案下載時 `<namespace>-<workspace>.json` 檔案名。 執行下列任一項作業：
+1. 從Adobe Developer主控台下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案下載方式 `<namespace>-<workspace>.json` 作為檔案名稱。 執行下列任一項作業：
 
-   * 將檔案更名為 `console.json` 然後移到項目的根部。
-   * 或者，可以將絕對路徑添加到Adobe Developer控制台整合JSON檔案。 這是相同的 [`console.json`](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user) 下載到項目工作區中的檔案。
+   * 將檔案重新命名為 `console.json` 並將其移動到專案的根目錄中。
+   * 或者，您也可以將絕對路徑新增至Adobe Developer主控台整合JSON檔案。 這是相同的 [`console.json`](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user) 已在專案工作區中下載的檔案。
 
       ```conf
       ASSET_COMPUTE_INTEGRATION_FILE_PATH=
       ```
 
-1. 添加S3或Azure儲存憑據。 您只需訪問一個雲儲存解決方案。
+1. 新增S3或Azure儲存體認證。 您只需要存取一個雲端儲存解決方案。
 
    ```conf
    # S3 credentials
@@ -123,13 +123,13 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!TIP]
 >
->的 `config.json` 檔案包含憑據。 從項目內，將JSON檔案添加到 `.gitignore` 檔案以阻止其共用。 同樣適用於.env和.aio檔案。
+>此 `config.json` 檔案包含認證。 從您的專案中，將JSON檔案新增至 `.gitignore` 檔案以防止其共用。 這同樣適用於.env和.aio檔案。
 
 ## 執行應用程式 {#run-custom-application}
 
-使用Asset compute開發工具執行應用程式之前，請正確配置 [憑據](#developer-tool-credentials)。
+使用Asset compute Developer Tool執行應用程式之前，請正確設定 [認證](#developer-tool-credentials).
 
-要在開發工具中運行應用程式，請使用 `aio app run` 的子菜單。 它將操作部署到 [!DNL Adobe I/O] 運行時並啟動本地電腦上的開發工具。 此工具用於在開發過程中test應用程式請求。 下面是一個格式副本請求示例：
+若要在開發人員工具中執行應用程式，請使用 `aio app run` 命令。 它將動作部署至 [!DNL Adobe I/O] 執行階段並在本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式請求。 以下是範例轉譯請求：
 
 ```json
 "renditions": [
@@ -142,24 +142,24 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->不要使用 `--local` 帶有 `run` 的子菜單。 這和 [!DNL Asset Compute] 自定義應用程式和Asset compute開發工具。 自定義應用程式由 [!DNL Asset Compute Service] 無法訪問在開發人員的本地電腦上運行的操作。
+>請勿使用 `--local` 標幟為 `run` 命令。 無法搭配使用 [!DNL Asset Compute] 自訂應用程式和Asset compute開發人員工具。 自訂應用程式是由 [!DNL Asset Compute Service] 無法存取在開發人員本機電腦上執行的動作。
 
-請參閱 [這裡](test-custom-application.md) 如何test和調試應用程式。 完成自定義應用程式的開發後， [部署自定義應用程式](deploy-custom-application.md)。
+另請參閱 [此處](test-custom-application.md) 如何測試和偵錯您的應用程式。 當您完成自訂應用程式的開發時， [部署您的自訂應用程式](deploy-custom-application.md).
 
-## 嘗試通過Adobe提供的示例應用程式 {#try-sample}
+## 嘗試Adobe提供的範例應用程式 {#try-sample}
 
-以下是示例自定義應用程式：
+以下是自訂應用程式的範例：
 
-* [工作基本](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic)
-* [工人動物圖片](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-animal-pictures)
+* [worker-basic](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic)
+* [worker-animal-pictures](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-animal-pictures)
 
-### 模板自定義應用程式 {#template-custom-application}
+### 範本自訂應用程式 {#template-custom-application}
 
-的 [工作基本](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic) 是模板應用程式。 它只需複製源檔案即可生成格式副本。 此應用程式的內容是選擇時收到的模板 `Adobe Asset Compute` 建立aio應用。
+此 [worker-basic](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic) 是範本應用程式。 它只會複製來源檔案來產生轉譯。 此應用程式的內容為選擇時收到的範本 `Adobe Asset Compute` 建立aio應用程式時。
 
-應用程式檔案， [`worker-basic.js`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) 使用 [`asset-compute-sdk`](https://github.com/adobe/asset-compute-sdk#overview) 下載源檔案，協調每個格式副本處理，並將生成的格式副本上載回雲儲存。
+應用程式檔案， [`worker-basic.js`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) 使用 [`asset-compute-sdk`](https://github.com/adobe/asset-compute-sdk#overview) 若要下載來源檔案，請協調每個轉譯處理，並將產生的轉譯上傳回雲端儲存空間。
 
-的 [`renditionCallback`](https://github.com/adobe/asset-compute-sdk#rendition-callback-for-worker-required) 定義在應用程式碼中，是執行所有應用程式處理邏輯的位置。 格式副本回調 `worker-basic` 只需將源檔案內容複製到格式副本檔案即可。
+此 [`renditionCallback`](https://github.com/adobe/asset-compute-sdk#rendition-callback-for-worker-required) 定義在應用程式程式碼內，是執行所有應用程式處理邏輯的位置。 中的轉譯回呼 `worker-basic` 只需將來源檔案內容複製到轉譯檔案即可。
 
 ```javascript
 const { worker } = require('@adobe/asset-compute-sdk');
@@ -171,9 +171,9 @@ exports.main = worker(async (source, rendition) => {
 });
 ```
 
-## 調用外部API {#call-external-api}
+## 呼叫外部API {#call-external-api}
 
-在應用程式碼中，可以進行外部API調用以幫助處理應用程式。 下面是調用外部API的示例應用程式檔案。
+在應用程式程式碼中，您可以進行外部API呼叫，以協助處理應用程式。 以下為呼叫外部API的應用程式檔案範例。
 
 ```javascript
 exports.main = worker(async function (source, rendition) {
@@ -185,7 +185,7 @@ exports.main = worker(async function (source, rendition) {
 });
 ```
 
-例如， [`worker-animal-pictures`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L46) 使用 [`node-httptransfer`](https://github.com/adobe/node-httptransfer#node-httptransfer) 的下界。
+例如， [`worker-animal-pictures`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L46) 會使用，從Wikimedia對靜態URL發出擷取請求 [`node-httptransfer`](https://github.com/adobe/node-httptransfer#node-httptransfer) 資料庫。
 
 <!-- TBD: Revisit later to see if this note is required.
 >[!NOTE]
@@ -193,9 +193,9 @@ exports.main = worker(async function (source, rendition) {
 >For extra authorization for these API calls, see [custom authorization checks](#custom-authorization-checks).
 -->
 
-### 傳遞自定義參數 {#pass-custom-parameters}
+### 傳遞自訂引數 {#pass-custom-parameters}
 
-可以通過格式副本對象傳遞自定義的參數。 可以在應用程式中引用這些 [`rendition` 說明](https://github.com/adobe/asset-compute-sdk#rendition)。 格式副本對象的示例為：
+您可以透過轉譯物件傳遞自訂已定義的引數。 它們可在應用程式內參照，位置如下： [`rendition` 指示](https://github.com/adobe/asset-compute-sdk#rendition). 以下是轉譯物件的範例：
 
 ```json
 "renditions": [
@@ -207,7 +207,7 @@ exports.main = worker(async function (source, rendition) {
 ]
 ```
 
-訪問自定義參數的應用程式檔案的示例是：
+存取自訂引數之應用程式檔案的範例為：
 
 ```javascript
 exports.main = worker(async function (source, rendition) {
@@ -218,18 +218,18 @@ exports.main = worker(async function (source, rendition) {
 });
 ```
 
-的 `example-worker-animal-pictures` 傳遞自定義參數 [`animal`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L39) 確定從維基媒體獲取的檔案。
+此 `example-worker-animal-pictures` 傳遞自訂引數 [`animal`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L39) 以判斷要從Wikimedia擷取的檔案。
 
-## 身份驗證和授權支援 {#authentication-authorization-support}
+## 驗證和授權支援 {#authentication-authorization-support}
 
-預設情況下，Asset compute自定義應用程式附帶對App Builder項目的「授權」和「驗證」檢查。 通過設定 `require-adobe-auth` 注釋 `true` 的 `manifest.yml`。
+依預設，Asset compute自訂應用程式會隨App Builder專案的授權和驗證檢查提供。 這可透過設定 `require-adobe-auth` 註解至 `true` 在 `manifest.yml`.
 
-### 訪問其他AdobeAPI {#access-adobe-apis}
+### 存取其他AdobeAPI {#access-adobe-apis}
 
 <!-- TBD: Revisit this section. Where do we document console workspace creation?
 -->
 
-將API服務添加到 [!DNL Asset Compute] 在設定中建立的控制台工作區。 這些服務是由 [!DNL Asset Compute Service]。 在應用程式操作中可以訪問令牌和其他憑據 `params` 的雙曲餘切值。
+將API服務新增至 [!DNL Asset Compute] 在設定中建立的Console工作區。 這些服務屬於產生的JWT存取權杖的一部分 [!DNL Asset Compute Service]. 可在應用程式動作中存取權杖和其他認證 `params` 物件。
 
 ```javascript
 const accessToken = params.auth.accessToken; // JWT token for Technical Account with entitlements from the console workspace to the API service
@@ -237,11 +237,11 @@ const clientId = params.auth.clientId; // Technical Account client Id
 const orgId = params.auth.orgId; // Experience Cloud Organization
 ```
 
-### 為第三方系統傳遞憑據 {#pass-credentials-for-tp}
+### 傳遞協力廠商系統的認證 {#pass-credentials-for-tp}
 
-要處理其他外部服務的憑據，請將這些憑據作為操作的預設參數傳遞。 這些在傳輸中自動加密。 有關詳細資訊，請參見 [在運行時開發人員指南中建立操作](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)。 然後在部署過程中使用環境變數設定它們。 這些參數可在 `params` 對象。
+若要處理其他外部服務的認證，請將這些認證作為預設引數傳遞給動作。 傳輸中會自動加密這些檔案。 如需詳細資訊，請參閱 [在執行階段開發人員指南中建立動作](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md). 然後在部署期間使用環境變數設定它們。 這些引數可在以下位置存取： `params` 物件。
 
-在 `inputs` 的 `manifest.yml`:
+設定內的預設引數 `inputs` 在 `manifest.yml`：
 
 ```yaml
 packages:
@@ -257,16 +257,16 @@ packages:
           require-adobe-auth: true
 ```
 
-的 `$VAR` 表達式從名為 `VAR`。
+此 `$VAR` 運算式會從名為的環境變數中讀取值 `VAR`.
 
-在開發過程中，可以在本地ENV檔案中將值設定為 `aio` 除了從調用shell設定的變數之外，還會自動從ENV檔案中讀取環境變數。 在此示例中，ENV檔案如下所示：
+在開發期間，可以在本機ENV檔案中將值設定為 `aio` 除了從叫用殼層設定的變數之外，還會自動從ENV檔案讀取環境變數。 在此範例中，ENV檔案看起來像這樣：
 
 ```CONF
 #...
 SECRET_KEY=secret-value
 ```
 
-對於生產部署，可以在CI系統中設定環境變數，例如在GitHub操作中使用機密。 最後，訪問應用程式內的預設參數，如下：
+對於生產部署，您可以在CI系統中設定環境變數，例如在GitHub動作中使用秘密。 最後，存取應用程式內的預設引數，如下所示：
 
 ```javascript
 const key = params.secretKey;
@@ -274,7 +274,7 @@ const key = params.secretKey;
 
 ## 調整應用程式大小 {#sizing-workers}
 
-應用程式在 [!DNL Adobe I/O] 運行時 [限制](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md) 可以通過 `manifest.yml`:
+應用程式會在的容器中執行 [!DNL Adobe I/O] 執行階段為 [限制](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md) 可透過以下方式設定： `manifest.yml`：
 
 ```yaml
     actions:
@@ -286,14 +286,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-由於Asset compute應用程式通常執行的處理範圍更廣，因此更有可能必須調整這些限制以獲得最佳效能（足夠大以處理二進位資產）和效率（不會因為未使用的容器記憶體而浪費資源）。
+由於通常由Asset compute應用程式完成的更廣泛處理，因此更有可能需要調整這些限制以獲得最佳效能（足夠大以處理二進位資產）和效率（不會因未使用的容器記憶體而浪費資源）。
 
-運行時中操作的預設超時為一分鐘，但可以通過設定 `timeout` 限制（毫秒）。 如果希望處理較大的檔案，請增加此次。 考慮下載源、處理檔案和上載格式副本所花的總時間。 如果操作超時，即在指定超時限制之前不返回激活，則運行時將丟棄容器並不重用它。
+執行階段中動作的預設逾時為一分鐘，但可透過設定 `timeout` 限制（毫秒）。 如果您希望處理較大的檔案，請增加此時間。 請考慮下載來源、處理檔案及上傳轉譯所需的總時間。 如果動作逾時（即在指定的逾時限制之前未傳回啟動），執行階段會捨棄容器且不重複使用它。
 
-Asset compute應用程式從本質上來說往往是網路和磁碟輸入或輸出綁定。 必須先下載源檔案，處理通常佔用大量資源，然後重新上載生成的格式副本。
+asset compute應用程式本質上是網路和磁碟的輸入或輸出繫結。 必須先下載來源檔案，處理通常需要大量資源，然後才會再次上傳產生的轉譯。
 
-操作容器可用的記憶體由 `memorySize` MB。 當前，它還定義了容器獲得的CPU訪問量，而且最重要的是，它是使用運行時成本的關鍵因素（較大的容器成本更高）。 當處理需要更多記憶體或CPU時，請在此處使用較大的值，但請小心不要浪費資源，因為容器越大，總吞吐量越低。
+動作容器可用的記憶體由指定 `memorySize` 以MB為單位。 目前，這也定義了容器取得的CPU存取許可權，最重要的是，這是使用執行階段成本的關鍵要素（容器越大，成本越高）。 當您的處理需要更多記憶體或CPU時，請在此處使用較大的值，但請注意不要因為容器越大，整體處理量越低而浪費資源。
 
-此外，可利用該方法控制容器內的動作併發 `concurrency` 的子菜單。 這是單個容器（相同操作）獲取的併發激活數。 在此模型中，操作容器類似於接收多個併發請求的Node.js伺服器，直到達此限制。 如果未設定，則運行時中的預設值為200，這對較小的App Builder操作非常有用，但由於應用程式的本地處理和磁碟活動更為密集，因此通常對Asset compute應用程式來說太大。 某些應用程式（視其實施情況而定）在併發活動中可能也不能正常工作。 asset computeSDK通過將檔案寫入不同的唯一資料夾來確保激活分離。
+此外，您也可以使用控制容器內的動作並行 `concurrency` 設定。 這是單一容器（相同動作）所取得的並行啟用數。 在此模型中，動作容器就像是Node.js伺服器，可接收多個並行請求，最多可達該限制。 如果未設定，執行階段中的預設值為200，這非常適合用於較小的App Builder動作，但通常對於Asset compute應用程式來說太大了，因為它們有較密集的本機處理和磁碟活動。 某些應用程式（視其實施而定）可能無法順利搭配並行活動運作。 asset computeSDK會將檔案寫入不同的唯一資料夾，藉此確保可分隔啟用作業。
 
-Test應用程式以查找 `concurrency` 和 `memorySize`。 較大的容器=記憶體限制較高可能允許更多併發，但也可能會浪費較低的流量。
+測試應用程式以找出最佳數量 `concurrency` 和 `memorySize`. 較大的容器=較高的記憶體限制可能允許更多並行，但也可能對較低的流量造成浪費。

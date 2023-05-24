@@ -1,6 +1,6 @@
 ---
 title: "[!DNL Asset Compute Service] HTTP API"
-description: "[!DNL Asset Compute Service] HTTP API建立自定義應用程式。"
+description: '"[!DNL Asset Compute Service] HTTP API可建立自訂應用程式。」'
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
 source-git-commit: 93d3b407c8875888f03bec673d0a677a3205cfbb
 workflow-type: tm+mt
@@ -11,42 +11,42 @@ ht-degree: 2%
 
 # [!DNL Asset Compute Service] HTTP API {#asset-compute-http-api}
 
-API的使用僅限於開發目的。 在開發自定義應用程式時，API被作為上下文提供。 [!DNL Adobe Experience Manager] 作為 [!DNL Cloud Service] 使用API將處理資訊傳遞給自定義應用程式。 有關詳細資訊，請參見 [使用資產微服務和處理配置檔案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+API的使用僅限於開發目的。 此API在開發自訂應用程式時作為上下文提供。 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service] 使用API將處理資訊傳遞至自訂應用程式。 如需詳細資訊，請參閱 [使用資產微服務和處理設定檔](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html).
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service] 僅供使用 [!DNL Experience Manager] 作為 [!DNL Cloud Service]。
+>[!DNL Asset Compute Service] 僅供搭配使用 [!DNL Experience Manager] as a [!DNL Cloud Service].
 
-任何客戶 [!DNL Asset Compute Service] HTTP API必須遵循此高級流：
+的任何使用者端 [!DNL Asset Compute Service] HTTP API必須遵循此高階流程：
 
-1. 將客戶端設定為 [!DNL Adobe Developer Console] IMS組織的項目。 每個獨立的客戶端（系統或環境）都需要自己的獨立項目來分隔事件資料流。
+1. 使用者端布建為 [!DNL Adobe Developer Console] ims組織中的專案。 每個單獨的使用者端（系統或環境）需要其自己的單獨專案，以分離事件資料流。
 
-1. 客戶端使用 [JWT（服務帳戶）身份驗證](https://www.adobe.io/authentication/auth-methods.html)。
+1. 使用者端使用為技術帳戶產生存取權杖 [JWT （服務帳戶）驗證](https://www.adobe.io/authentication/auth-methods.html).
 
-1. 客戶端呼叫 [`/register`](#register) 只檢索一次日誌URL。
+1. 使用者端呼叫 [`/register`](#register) 僅擷取日誌URL一次。
 
-1. 客戶端呼叫 [`/process`](#process-request) 要為其生成格式副本的每個資產。 呼叫是非同步的。
+1. 使用者端呼叫 [`/process`](#process-request) 針對每個要產生轉譯的資產。 呼叫為非同步。
 
-1. 客戶定期輪詢日誌 [接收事件](#asynchronous-events)。 在成功處理格式副本時，它會接收每個請求格式副本的事件(`rendition_created` 事件類型)或如果出現錯誤(`rendition_failed` 事件類型)。
+1. 使用者端定期輪詢日誌 [接收事件](#asynchronous-events). 成功處理轉譯時，它會接收每個請求轉譯的事件(`rendition_created` 事件型別)或是否有錯誤(`rendition_failed` 事件型別)。
 
-的 [@adobe/asset-compute-client](https://github.com/adobe/asset-compute-client) 模組使Node.js代碼中的API易於使用。
+此 [@adobe/asset-compute-client](https://github.com/adobe/asset-compute-client) 模組可讓您在Node.js程式碼中輕鬆使用API。
 
 ## 驗證和授權 {#authentication-and-authorization}
 
-所有API都需要訪問令牌驗證。 請求必須設定以下標頭：
+所有API都需要存取權杖驗證。 請求必須設定以下標頭：
 
-1. `Authorization` 帶有承載令牌的頭，即技術帳戶令牌，通過 [JWT交換](https://www.adobe.io/authentication/auth-methods.html) Adobe Developer控制台項目。 的 [作用域](#scopes) 下面記錄。
+1. `Authorization` 標頭具有持有人權杖，這是技術帳戶權杖，透過接收 [JWT交換](https://www.adobe.io/authentication/auth-methods.html) 從Adobe Developer Console專案。 此 [範圍](#scopes) 記錄如下。
 
 <!-- TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in Adobe I/O's GitHub repo to get a new URL.
 -->
 
-1. `x-gw-ims-org-id` IMS組織ID的頭。
+1. `x-gw-ims-org-id` IMS組織ID的標頭。
 
-1. `x-api-key` 從 [!DNL Adobe Developers Console] 項目。
+1. `x-api-key` ，使用者端ID來自 [!DNL Adobe Developers Console] 專案。
 
 ### 範圍 {#scopes}
 
-確保訪問令牌的以下作用域：
+確定以下存取權杖範圍：
 
 * `openid`
 * `AdobeID`
@@ -58,52 +58,52 @@ API的使用僅限於開發目的。 在開發自定義應用程式時，API被�
 * `additional_info.roles`
 * `additional_info.projectedProductContext`
 
-這些要求 [!DNL Adobe Developer Console] 要訂閱的項目 `Asset Compute`。 `I/O Events`, `I/O Management API` 服務。 單個作用域的細分為：
+這些需要 [!DNL Adobe Developer Console] 要訂閱的專案 `Asset Compute`， `I/O Events`、和 `I/O Management API` 服務。 個別範圍的劃分如下：
 
 * 基本
    * 範圍： `openid,AdobeID`
 
 * asset compute
-   * 元目錄： `asset_compute_meta`
+   * metascope： `asset_compute_meta`
    * 範圍： `asset_compute,read_organizations`
 
 * [!DNL Adobe I/O] 事件
-   * 元目錄： `event_receiver_api`
+   * metascope： `event_receiver_api`
    * 範圍： `event_receiver,event_receiver_api`
 
 * [!DNL Adobe I/O] 管理API
-   * 元目錄： `ent_adobeio_sdk`
+   * metascope： `ent_adobeio_sdk`
    * 範圍： `adobeio_api,additional_info.roles,additional_info.projectedProductContext`
 
 ## 註冊 {#register}
 
-每個客戶端 [!DNL Asset Compute service]  — 獨特 [!DNL Adobe Developer Console] 訂閱服務的項目 — 必須 [註冊](#register-request) 在發出處理請求之前。 註冊步驟返回唯一事件日誌，該日誌是從格式副本處理中檢索非同步事件所必需的。
+每個使用者端 [!DNL Asset Compute service]  — 不重複 [!DNL Adobe Developer Console] 訂閱服務的專案 — 必須 [註冊](#register-request) 進行處理要求之前。 註冊步驟會傳回從轉譯處理中擷取非同步事件所需的唯一事件日誌。
 
-在其生命週期結束時，客戶機 [註銷](#unregister-request)。
+在其生命週期結束時，使用者端可以 [取消註冊](#unregister-request).
 
-### 註冊請求 {#register-request}
+### 註冊要求 {#register-request}
 
-此API調用設定 [!DNL Asset Compute] 提供事件日誌URL。 這是冪等操作，只需為每個客戶端調用一次。 可以再次調用它以檢索日誌URL。
+此API呼叫會設定 [!DNL Asset Compute] 使用者端並提供事件日誌URL。 這是等冪運算，每個使用者端只需要呼叫一次。 可以再次呼叫它以擷取日誌URL。
 
 | 參數 | 值 |
 |--------------------------|------------------------------------------------------|
 | 方法 | `POST` |
 | 路徑 | `/register` |
-| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization)。 |
-| 頁首 `x-request-id` | 可選，可由客戶端為系統間處理請求的唯一端到端標識符設定。 |
-| 請求正文 | 必須為空。 |
+| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization). |
+| 頁首 `x-request-id` | 可選，可由使用者端設定為跨系統處理要求的唯一端對端識別碼。 |
+| 要求內文 | 必須為空白。 |
 
-### 註冊響應 {#register-response}
+### 註冊回應 {#register-response}
 
 | 參數 | 值 |
 |-----------------------|------------------------------------------------------|
-| MIME類型 | `application/json` |
-| 頁首 `X-Request-Id` | 或 `X-Request-Id` 請求標頭或唯一生成的標頭。 用於識別跨系統和/或支援請求的請求。 |
-| 反應體 | JSON對象 `journal`。 `ok` 和/或 `requestId` 的子菜單。 |
+| MIME型別 | `application/json` |
+| 頁首 `X-Request-Id` | 與 `X-Request-Id` 請求標頭或唯一產生的標頭。 用於識別跨系統的請求和/或支援請求。 |
+| 回應內文 | 具有的JSON物件 `journal`， `ok` 和/或 `requestId` 欄位。 |
 
-HTTP狀態代碼為：
+HTTP狀態碼為：
 
-* **200次成功**:請求成功時。 它包含 `journal` 通過以下方式觸發的非同步處理結果的通知的URL `/process` （作為事件類型） `rendition_created` 成功時，或 `rendition_failed` 失敗時)。
+* **200項成功**：要求成功時。 它包含 `journal` 透過觸發的非同步處理任何結果通知的URL `/process` (作為事件型別 `rendition_created` 成功時，或 `rendition_failed` 失敗時)。
 
    ```json
    {
@@ -113,22 +113,12 @@ HTTP狀態代碼為：
    }
    ```
 
-* **401未授權**:請求無效時發生 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
+* **401未獲授權**：當請求無效時發生 [驗證](#authentication-and-authorization). 例如，存取權杖無效或API金鑰無效。
 
-* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
+* **403禁止**：當請求無效時發生 [授權](#authentication-and-authorization). 一個範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）未訂閱所有必要的服務。
 
-* **429請求過多**:當系統由此客戶端或其他客戶端過載時發生。 客戶端應使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
-* **4xx錯誤**:出現任何其他客戶端錯誤時，註冊失敗。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
-
-   ```json
-   {
-       "ok": false,
-       "requestId": "1234567890",
-       "message": "error message"
-   }
-   ```
-
-* **5xx錯誤**:出現任何其他伺服器端錯誤並註冊失敗時發生。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
+* **429請求太多**：當系統被此使用者端或其他方式多載時發生。 使用者端應使用 [指數輪詢](https://en.wikipedia.org/wiki/Exponential_backoff). 內文是空的。
+* **4xx錯誤**：發生任何其他使用者端錯誤且註冊失敗時。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
    ```json
    {
@@ -138,29 +128,39 @@ HTTP狀態代碼為：
    }
    ```
 
-### 註銷請求 {#unregister-request}
+* **5xx錯誤**：發生於發生任何其他伺服器端錯誤且註冊失敗時。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
-此API調用取消註冊 [!DNL Asset Compute] 客戶端。 此後，將無法再呼叫 `/process`。 對未註冊的客戶端或尚未註冊的客戶端使用API調用將返回 `404` 錯誤。
+   ```json
+   {
+       "ok": false,
+       "requestId": "1234567890",
+       "message": "error message"
+   }
+   ```
+
+### 取消註冊請求 {#unregister-request}
+
+此API呼叫會取消註冊 [!DNL Asset Compute] 使用者端。 之後就不能再呼叫 `/process`. 對未註冊的使用者端或尚未註冊的使用者端使用API呼叫會傳回 `404` 錯誤。
 
 | 參數 | 值 |
 |--------------------------|------------------------------------------------------|
 | 方法 | `POST` |
 | 路徑 | `/unregister` |
-| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization)。 |
-| 頁首 `x-request-id` | 可選，可由客戶端為系統間處理請求的唯一端到端標識符設定。 |
-| 請求正文 | 空白. |
+| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization). |
+| 頁首 `x-request-id` | 可選，可由使用者端設定為跨系統處理要求的唯一端對端識別碼。 |
+| 要求內文 | 空白. |
 
-### 註銷響應 {#unregister-response}
+### 取消登入回應 {#unregister-response}
 
 | 參數 | 值 |
 |-----------------------|------------------------------------------------------|
-| MIME類型 | `application/json` |
-| 頁首 `X-Request-Id` | 或 `X-Request-Id` 請求標頭或唯一生成的標頭。 用於識別跨系統和/或支援請求的請求。 |
-| 反應體 | JSON對象 `ok` 和 `requestId` 的子菜單。 |
+| MIME型別 | `application/json` |
+| 頁首 `X-Request-Id` | 與 `X-Request-Id` 請求標頭或唯一產生的標頭。 用於識別跨系統的請求和/或支援請求。 |
+| 回應內文 | 具有的JSON物件 `ok` 和 `requestId` 欄位。 |
 
 狀態代碼為：
 
-* **200次成功**:在找到並刪除註冊和日記帳時發生。
+* **200項成功**：找到並移除註冊和日誌時發生。
 
    ```json
    {
@@ -169,11 +169,11 @@ HTTP狀態代碼為：
    }
    ```
 
-* **401未授權**:請求無效時發生 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
+* **401未獲授權**：當請求無效時發生 [驗證](#authentication-and-authorization). 例如，存取權杖無效或API金鑰無效。
 
-* **《小行星403》**:請求無效時發生 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
+* **403禁止**：當請求無效時發生 [授權](#authentication-and-authorization). 一個範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）未訂閱所有必要的服務。
 
-* **找不到404**:當給定憑據沒有當前註冊時發生。
+* **404找不到**：當指定認證目前沒有註冊時發生。
 
    ```json
    {
@@ -182,9 +182,9 @@ HTTP狀態代碼為：
    }
    ```
 
-* **429請求過多**:在系統過載時發生。 客戶端應使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
+* **429請求太多**：在系統超載時發生。 使用者端應使用 [指數輪詢](https://en.wikipedia.org/wiki/Exponential_backoff). 內文是空的。
 
-* **4xx錯誤**:出現任何其他客戶端錯誤並註銷失敗時發生。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
+* **4xx錯誤**：當發生任何其他使用者端錯誤且取消註冊失敗時發生。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
    ```json
    {
@@ -194,7 +194,7 @@ HTTP狀態代碼為：
    }
    ```
 
-* **5xx錯誤**:出現任何其他伺服器端錯誤並註冊失敗時發生。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
+* **5xx錯誤**：發生於發生任何其他伺服器端錯誤且註冊失敗時。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
    ```json
    {
@@ -204,24 +204,24 @@ HTTP狀態代碼為：
    }
    ```
 
-## 處理請求 {#process-request}
+## 處理要求 {#process-request}
 
-的 `process` 操作根據請求中的說明提交將源資產轉換為多個格式副本的任務。 成功完成的通知（事件類型） `rendition_created`)或任何錯誤（事件類型） `rendition_failed`)被發送到必須使用 [/register](#register) 在進行任意數量 `/process` 請求。 錯誤格式的請求立即失敗，錯誤代碼為400。
+此 `process` 作業會根據請求中的指示，提交將來源資產轉換為多個轉譯的工作。 成功完成的通知（事件型別） `rendition_created`)或任何錯誤(事件型別 `rendition_failed`)傳送至事件日誌，而事件日誌必須透過以下方式擷取： [/register](#register) 在生成任何數量之前執行一次 `/process` 要求。 格式錯誤的請求會立即失敗，並產生400錯誤代碼。
 
-使用URL(如AmazonAWSS3預簽名的URL或Azure Blob儲存SAS URL)引用二進位檔案，以便讀取 `source` 資產(A)`GET` URL)和寫入格式副本(`PUT` URL)。 客戶端負責生成這些預簽名的URL。
+二進位檔是使用URL來參照，例如Amazon AWS S3預先簽署的URL或Azure Blob儲存SAS URL，兩者都會讀取 `source` 資產(`GET` URL)和撰寫轉譯(`PUT` URL)。 使用者端負責產生這些預先簽署的URL。
 
 | 參數 | 值 |
 |--------------------------|------------------------------------------------------|
 | 方法 | `POST` |
 | 路徑 | `/process` |
-| MIME類型 | `application/json` |
-| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization)。 |
-| 頁首 `x-request-id` | 可選，可由客戶端為系統間處理請求的唯一端到端標識符設定。 |
-| 請求正文 | 必須採用進程請求JSON格式，如下所述。 它提供了有關要處理的資產和要生成的格式副本的說明。 |
+| MIME型別 | `application/json` |
+| 頁首 `Authorization` | 全部 [授權相關標頭](#authentication-and-authorization). |
+| 頁首 `x-request-id` | 可選，可由使用者端設定為跨系統處理要求的唯一端對端識別碼。 |
+| 要求內文 | 必須採用如下所述的程式請求JSON格式。 它會提供要處理的資產以及要產生哪些轉譯的相關指示。 |
 
-### 進程請求JSON {#process-request-json}
+### 處理請求JSON {#process-request-json}
 
-請求正文 `/process` 是具有此高級架構的JSON對象：
+的請求內文 `/process` 是具備此高階結構描述的JSON物件：
 
 ```json
 {
@@ -230,15 +230,15 @@ HTTP狀態代碼為：
 }
 ```
 
-可用欄位包括：
+可用的欄位包括：
 
 | 名稱 | 類型 | 說明 | 範例 |
 |--------------|----------|-------------|---------|
-| `source` | `string` | 要處理的源資產的URL。 根據請求的格式副本格式(例如， `fmt=zip`)。 | `"http://example.com/image.jpg"` |
-| `source` | `object` | 描述要處理的源資產。 請參閱 [源對象欄位](#source-object-fields) 下。 根據請求的格式副本格式(例如， `fmt=zip`)。 | `{"url": "http://example.com/image.jpg", "mimeType": "image/jpeg" }` |
-| `renditions` | `array` | 要從源檔案生成的格式副本。 每個格式副本對象都支援 [格式說明](#rendition-instructions)。 必要. | `[{ "target": "https://....", "fmt": "png" }]` |
+| `source` | `string` | 要處理的來源資產的URL。 根據要求的轉譯格式(例如 `fmt=zip`)。 | `"http://example.com/image.jpg"` |
+| `source` | `object` | 說明要處理的來源資產。 請參閱「 」的說明 [來源物件欄位](#source-object-fields) 下方的。 根據要求的轉譯格式(例如 `fmt=zip`)。 | `{"url": "http://example.com/image.jpg", "mimeType": "image/jpeg" }` |
+| `renditions` | `array` | 從來源檔案產生的轉譯。 每個轉譯物件都支援 [轉譯指示](#rendition-instructions). 必要. | `[{ "target": "https://....", "fmt": "png" }]` |
 
-的 `source` 可以是 `<string>` 可視為URL，或可以是 `<object>` 的子菜單。 以下變型相似：
+此 `source` 可以是 `<string>` 視為URL或可以是 `<object>` 含一個額外欄位。 下列變體類似：
 
 ```json
 "source": "http://example.com/image.jpg"
@@ -250,16 +250,16 @@ HTTP狀態代碼為：
 }
 ```
 
-### 源對象欄位 {#source-object-fields}
+### 來源物件欄位 {#source-object-fields}
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-----------|----------|-------------|---------|
-| `url` | `string` | 要處理的源資產的URL。 必要. | `"http://example.com/image.jpg"` |
-| `name` | `string` | 源資產檔案名。 如果未檢測到MIME類型，則可能使用名稱中的檔案副檔名。 優先於URL路徑中的檔案名或 `content-disposition` 二進位資源的標頭。 預設為「file」。 | `"image.jpg"` |
-| `size` | `number` | 源資產檔案大小（以位元組為單位）。 優先於 `content-length` 二進位資源的標頭。 | `10234` |
-| `mimetype` | `string` | 源資產檔案MIME類型。 優先於 `content-type` 二進位資源的標頭。 | `"image/jpeg"` |
+| `url` | `string` | 要處理的來源資產的URL。 必要. | `"http://example.com/image.jpg"` |
+| `name` | `string` | 來源資產檔案名稱。 如果偵測不到MIME型別，則可能會使用名稱中的副檔名。 優先於URL路徑中的檔案名稱或中的檔案名稱 `content-disposition` 二進位資源的標頭。 預設為「file」。 | `"image.jpg"` |
+| `size` | `number` | 來源資產檔案大小（位元組）。 優先於 `content-length` 二進位資源的標頭。 | `10234` |
+| `mimetype` | `string` | 來源資產檔案MIME型別。 優先於 `content-type` 二進位資源的標頭。 | `"image/jpeg"` |
 
-### 完整 `process` 請求示例 {#complete-process-request-example}
+### 完整 `process` 請求範例 {#complete-process-request-example}
 
 ```json
 {
@@ -288,19 +288,19 @@ HTTP狀態代碼為：
 }
 ```
 
-## 進程響應 {#process-response}
+## 處理序回應 {#process-response}
 
-的 `/process` 請求立即返回，並基於基本請求驗證成功或失敗。 實際資產處理非同步進行。
+此 `/process` 根據基本請求驗證，請求會立即傳回成功或失敗。 實際資產處理作業會非同步進行。
 
 | 參數 | 值 |
 |-----------------------|------------------------------------------------------|
-| MIME類型 | `application/json` |
-| 頁首 `X-Request-Id` | 或 `X-Request-Id` 請求標頭或唯一生成的標頭。 用於識別跨系統和/或支援請求的請求。 |
-| 反應體 | JSON對象 `ok` 和 `requestId` 的子菜單。 |
+| MIME型別 | `application/json` |
+| 頁首 `X-Request-Id` | 與 `X-Request-Id` 請求標頭或唯一產生的標頭。 用於識別跨系統的請求和/或支援請求。 |
+| 回應內文 | 具有的JSON物件 `ok` 和 `requestId` 欄位。 |
 
 狀態代碼：
 
-* **200次成功**:如果請求已成功提交。 響應JSON包括 `"ok": true`:
+* **200項成功**：若已成功提交請求。 回應JSON包含 `"ok": true`：
 
    ```json
    {
@@ -309,7 +309,7 @@ HTTP狀態代碼為：
    }
    ```
 
-* **400無效請求**:如果請求格式不正確，例如請求JSON中缺少必需欄位。 響應JSON包括 `"ok": false`:
+* **400無效的請求**：如果請求的格式不正確，例如請求JSON中缺少必填欄位。 回應JSON包含 `"ok": false`：
 
    ```json
    {
@@ -319,10 +319,10 @@ HTTP狀態代碼為：
    }
    ```
 
-* **401未授權**:當請求無效時 [認證](#authentication-and-authorization)。 示例可能是無效的訪問令牌或無效的API密鑰。
-* **《小行星403》**:當請求無效時 [授權](#authentication-and-authorization)。 示例可能是有效的訪問令牌，但Adobe Developer控制台項目（技術帳戶）未訂閱所有必需的服務。
-* **429請求過多**:當系統由此客戶端或通常過載時。 客戶端可以使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff)。 屍體是空的。
-* **4xx錯誤**:出現任何其他客戶端錯誤時。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
+* **401未獲授權**：當請求無效時 [驗證](#authentication-and-authorization). 例如，存取權杖無效或API金鑰無效。
+* **403禁止**：當請求無效時 [授權](#authentication-and-authorization). 一個範例可能是有效的存取Token，但Adobe Developer Console專案（技術帳戶）未訂閱所有必要的服務。
+* **429請求太多**：此使用者端或一般而言系統超載時。 使用者端可使用 [指數輪詢](https://en.wikipedia.org/wiki/Exponential_backoff). 內文是空的。
+* **4xx錯誤**：發生任何其他使用者端錯誤時。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
    ```json
    {
@@ -332,7 +332,7 @@ HTTP狀態代碼為：
    }
    ```
 
-* **5xx錯誤**:當存在任何其他伺服器端錯誤時。 通常會返回JSON響應，但並不保證所有錯誤都會返回：
+* **5xx錯誤**：發生任何其他伺服器端錯誤時。 通常會傳回類似的JSON回應，但並非所有錯誤都有保證：
 
    ```json
    {
@@ -342,116 +342,116 @@ HTTP狀態代碼為：
    }
    ```
 
-大多數客戶端可能傾向於使用 [指數退避](https://en.wikipedia.org/wiki/Exponential_backoff) 在任何錯誤 *除* 配置問題（如401或403）或無效請求（如400）。 除了通過429個響應來限制正常速率外，臨時服務中斷或限制可能導致5xx錯誤。 建議在一段時間後重試。
+大多數使用者端都可能傾向使用來重試完全相同的請求 [指數輪詢](https://en.wikipedia.org/wiki/Exponential_backoff) 發生任何錯誤時 *例外* 設定問題（例如401或403）或無效請求（例如400）。 除了透過429回應來限制一般速率之外，暫時性的服務中斷或限制可能會導致5xx錯誤。 之後，建議您在一段時間後重試。
 
-所有JSON響應（如果存在）包括 `requestId` 與 `X-Request-Id` 標題。 建議從頭讀取，因為它始終存在。 的 `requestId` 在與處理請求相關的所有事件中也返回為 `requestId`。 客戶端不能對此字串的格式作任何假設，它是不透明的字串標識符。
+所有JSON回應（如果存在）包含 `requestId` ，此值與 `X-Request-Id` 標頭。 建議從標頭讀取，因為它永遠存在。 此 `requestId` 也會在與處理請求相關的所有事件中傳回 `requestId`. 使用者端不得對此字串的格式做任何假設，此字串是不透明的字串識別碼。
 
-## 選擇加入後處理 {#opt-in-to-post-processing}
+## 選擇加入後續處理 {#opt-in-to-post-processing}
 
-的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk) 支援一組基本影像後處理選項。 通過設定欄位，自定義工作人員可以明確選擇後處理 `postProcess` 格式副本對象上 `true`。
+此 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk) 支援一組基本影像後處理選項。 自訂背景工作程式可以透過設定欄位明確選擇加入後續處理 `postProcess` 在轉譯物件上 `true`.
 
 支援的使用案例包括：
 
-* 將格式副本裁剪到其限制由crop.w、crop.h、crop.x和crop.y定義的矩形。它由 `instructions.crop` 的子菜單。
-* 使用寬度、高度或兩者調整影像大小。 它由 `instructions.width` 和 `instructions.height` 的子菜單。 要僅使用寬度或高度調整大小，請僅設定一個值。 計算服務可降低縱橫比。
-* 設定JPEG影像的質量。 它由 `instructions.quality` 的子菜單。 最佳質量由 `100` 而較小的值表示質量下降。
-* 建立隔行掃描影像。 它由 `instructions.interlace` 的子菜單。
-* 設定DPI以通過調整應用於像素的比例來調整呈現大小以用於案頭發佈。 它由 `instructions.dpi` 的子菜單。 但是，要調整影像大小以使其以不同的解析度大小相同，請使用 `convertToDpi` 的下界。
-* 調整影像的大小，使其渲染的寬度或高度在指定目標解析度(DPI)下保持與原始影像相同。 它由 `instructions.convertToDpi` 的子菜單。
+* 將轉譯裁切為矩形，其限制由crop.w、crop.h、crop.x和crop.y定義。它由以下定義： `instructions.crop` 在轉譯物件中。
+* 使用寬度、高度或兩者來調整影像大小。 它由以下定義： `instructions.width` 和 `instructions.height` 在轉譯物件中。 若要僅使用寬度或高度來調整大小，請僅設定一個值。 運算服務可節省外觀比例。
+* 設定JPEG影像的品質。 它由以下定義： `instructions.quality` 在轉譯物件中。 最佳品質表示為 `100` 和較小的值表示品質降低。
+* 建立交錯影像。 它由以下定義： `instructions.interlace` 在轉譯物件中。
+* 設定DPI可調整套用至畫素的比例，以調整案頭出版所需的演算大小。 它由以下定義： `instructions.dpi` 變更dpi解析度。 不過，若要調整影像大小，使其以不同解析度呈現相同大小，請使用 `convertToDpi` 指示。
+* 調整影像大小，使其演算後的寬度或高度與指定目標解析度(DPI)的原始影像保持相同。 它由以下定義： `instructions.convertToDpi` 在轉譯物件中。
 
 ## 浮水印資產 {#add-watermark}
 
-的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk) 支援向PNG、JPEG、TIFF和GIF影像檔案添加水印。 水印將按照 `watermark` 格式副本上的對象。
+此 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk) 支援在PNG、JPEG、TIFF和GIF影像檔案中新增浮水印。 浮水印是依照中的轉譯指示新增的 `watermark` 物件。
 
-在格式副本後處理期間執行水印。 要對資產進行水印，自定義工作人員 [後處理](#opt-in-to-post-processing) 設定欄位 `postProcess` 格式副本對象上 `true`。 如果工作程式不選擇加入，則不應用水印，即使在請求中的格式副本對象上設定了水印對象。
+浮水印會在轉譯後處理期間完成。 若要為資產加上浮水印，自訂背景工作 [選擇加入後續處理](#opt-in-to-post-processing) 藉由設定欄位 `postProcess` 在轉譯物件上 `true`. 如果Worker未選擇加入，則不會套用浮水印，即使浮水印物件已設定在請求中的轉譯物件上。
 
-## 格式副本說明 {#rendition-instructions}
+## 轉譯指示 {#rendition-instructions}
 
-這些是 `renditions` 陣列 [/進程](#process-request)。
+以下是「 」的可用選項 `renditions` 中的陣列 [/process](#process-request).
 
-### 公用欄位 {#common-fields}
-
-| 名稱 | 類型 | 說明 | 範例 |
-|-------------------|----------|-------------|---------|
-| `fmt` | `string` | 格式副本目標格式，也可以 `text` 用於文本提取和 `xmp` 將元XMP資料提取為xml。 請參閱 [支援的格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
-| `worker` | `string` | URL [自定義應用程式](develop-custom-application.md)。 必須是 `https://` URL。 如果存在此欄位，則格式副本由自定義應用程式建立。 然後，在自定義應用程式中使用任何其他集格式副本欄位。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
-| `target` | `string` | 應使用HTTPPUT將生成的格式副本上載到的URL。 | `http://w.com/img.jpg` |
-| `target` | `object` | 生成的格式副本的多部分預簽名URL上載資訊。 這是 [AEM/Oak Direct二進位上載](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) 這 [多部件上載行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>欄位:<ul><li>`urls`:字串陣列，每個預簽名部件URL對應一個</li><li>`minPartSize`:用於一個部件的最小大小= url</li><li>`maxPartSize`:用於一個部件的最大大小= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
-| `userData` | `object` | 由客戶端控制並按原樣傳遞到格式副本事件的可選保留空間。 允許客戶端添加自定義資訊以標識格式副本事件。 在自定義應用程式中，不得修改或依賴客戶端，因為客戶端隨時可以隨意更改。 | `{ ... }` |
-
-### 格式副本特定欄位 {#rendition-specific-fields}
-
-有關當前支援的檔案格式的清單，請參見 [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
+### 常見欄位 {#common-fields}
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `*` | `*` | 可以添加高級、自定義欄位 [自定義應用程式](develop-custom-application.md) 明白。 |  |
-| `embedBinaryLimit` | `number` 位元組 | 如果設定了此值，並且格式副本的檔案大小小於此值，則格式副本將嵌入在格式副本生成完成後發送的事件中。 允許嵌入的最大大小為32 KB（32 x 1024位元組）。 如果格式副本的大小大於 `embedBinaryLimit` 限制，它被放置在雲儲存中的某個位置，並且不嵌入事件。 | `3276` |
-| `width` | `number` | 寬度（像素）。 僅用於影像格式副本。 | `200` |
-| `height` | `number` | 高度（以像素為單位）。 僅用於影像格式副本。 | `200` |
-|  |  | 如果： <ul> <li> 兩者 `width` 和 `height` 指定，然後影像適合大小，同時保持長寬比 </li><li> 僅 `width` 僅 `height` 指定，生成的影像在保持縱橫比的同時使用相應的尺寸</li><li> 如果兩者都不 `width` 無 `height` 指定，則使用原始影像像素大小。 這取決於源類型。 對於某些格式(如PDF檔案)，使用預設大小。 可以有最大大小限制。</li></ul> |  |
-| `quality` | `number` | 在以下範圍中指定jpeg質量 `1` 至 `100`。 僅適用於影像格式副本。 | `90` |
-| `xmp` | `string` | 僅由元數XMP據寫回使用，它是base64編XMP碼以寫回指定的格式副本。 |  |
-| `interlace` | `bool` | 通過將交錯PNG或GIF或逐行JPEG設定為 `true`。 它對其他檔案格式沒有影響。 |  |
-| `jpegSize` | `number` | JPEG檔案的大小（以位元組為單位）。 它覆蓋任何 `quality` 的子菜單。 對其他格式沒有影響。 |  |
-| `dpi` | `number` 或 `object` | 設定x和y DPI。 為簡單起見，還可以將它設定為一個單數，該單數用於x和y。它對影像本身沒有影響。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
-| `convertToDpi` | `number` 或 `object` | x和y DPI在保持物理大小的同時重新採樣值。 為簡單起見，還可以將它設定為一個單數，該單數用於x和y。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
-| `files` | `array` | 要包含在ZIP存檔中的檔案清單(`fmt=zip`)。 每個條目可以是URL字串，也可以是具有以下欄位的對象：<ul><li>`url`:下載檔案的URL</li><li>`path`:將檔案儲存在ZIP中此路徑下</li></ul> | `[{ "url": "https://host/asset.jpg", "path": "folder/location/asset.jpg" }]` |
-| `duplicate` | `string` | ZIP存檔的重複處理(`fmt=zip`)。 預設情況下，儲存在ZIP中同一路徑下的多個檔案會生成錯誤。 設定 `duplicate` 至 `ignore` 只導致要儲存的第一個資產和忽略的其餘資產。 | `ignore` |
-| `watermark` | `object` | 包含有關 [水印](#watermark-specific-fields)。 |  |
+| `fmt` | `string` | 轉譯目標格式，也可以 `text` 文字擷取和 `xmp` 用於將XMP中繼資料擷取為xml。 另請參閱 [支援的格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
+| `worker` | `string` | 的URL [自訂應用程式](develop-custom-application.md). 必須是 `https://` URL。 如果此欄位存在，轉譯會由自訂應用程式建立。 然後，任何其他集合轉譯欄位都會用於自訂應用程式中。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
+| `target` | `string` | 應使用HTTPPUT將產生的轉譯上傳到的URL。 | `http://w.com/img.jpg` |
+| `target` | `object` | 所產生轉譯的多部分預先簽署URL上傳資訊。 這是用於 [AEM/Oak直接二進位上傳](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) 與此 [多部分上傳行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html).<br>欄位:<ul><li>`urls`：字串陣列，每個預先簽署部分URL各一個</li><li>`minPartSize`：用於一個部分的最小大小= url</li><li>`maxPartSize`：用於一個部分的大小上限= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
+| `userData` | `object` | 使用者端控制的可選保留空間，依原樣傳遞至轉譯事件。 允許使用者端新增自訂資訊以識別轉譯事件。 自訂應用程式不可修改或依賴，因為使用者端隨時可以變更。 | `{ ... }` |
 
-### 特定於水印的欄位 {#watermark-specific-fields}
+### 轉譯特定欄位 {#rendition-specific-fields}
 
-PNG格式用作水印。
+如需目前支援的檔案格式清單，請參閱 [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html).
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `scale` | `number` | 水印的比例，介於 `0.0` 和 `1.0`。 `1.0` 表示水印有其原始比例(1:1)，且較低的值會減小水印大小。 | 值 `0.5` 相當於原來大小的一半。 |
-| `image` | `url` | 要用於水印的PNG檔案的URL。 |  |
+| `*` | `*` | 進階、自訂欄位可新增 [自訂應用程式](develop-custom-application.md) 瞭解。 |  |
+| `embedBinaryLimit` | `number` 位元組 | 如果設定了此值，且轉譯的檔案大小小於此值，則轉譯會內嵌在當轉譯產生完成時所傳送的事件中。 允許內嵌的大小上限為32 KB （32 x 1024位元組）。 如果轉譯的大小大於 `embedBinaryLimit` limit，會放置在雲端儲存空間中的某個位置，而不會內嵌在事件中。 | `3276` |
+| `width` | `number` | 寬度（畫素）。 僅適用於影像轉譯。 | `200` |
+| `height` | `number` | 高度（畫素）。 僅適用於影像轉譯。 | `200` |
+|  |  | 如果符合下列條件，則一律會維持外觀比例： <ul> <li> 兩者 `width` 和 `height` 會指定，然後影像會符合大小，同時維持外觀比例 </li><li> 僅限 `width` 或僅限 `height` 指定，產生的影像會使用對應的尺寸，同時保持外觀比例</li><li> 如果兩者都不 `width` 也不 `height` 指定，則會使用原始影像畫素大小。 這取決於來源型別。 對於某些格式(例如PDF檔案)，會使用預設大小。 可以有大小上限。</li></ul> |  |
+| `quality` | `number` | 在以下範圍中指定jpeg品質： `1` 至 `100`. 僅適用於影像轉譯。 | `90` |
+| `xmp` | `string` | 只有XMP中繼資料回寫可使用此功能，它是base64編碼的XMP，用於回寫指定的轉譯。 |  |
+| `interlace` | `bool` | 建立交錯式PNG或GIF或漸進式JPEG，方法是將其設定為 `true`. 它對其他檔案格式沒有影響。 |  |
+| `jpegSize` | `number` | JPEG檔案的大致大小（位元組）。 它會覆寫任何 `quality` 設定。 對其他格式沒有影響。 |  |
+| `dpi` | `number` 或 `object` | 設定x和y DPI。 為簡單起見，它也可以設定為用於x和y的單一數字。這對影像本身沒有影響。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
+| `convertToDpi` | `number` 或 `object` | x和y DPI會重新取樣值，同時維持實體大小。 為簡單起見，它也可以設定為用於x和y的單一數字。 | `96` 或 `{ xdpi: 96, ydpi: 96 }` |
+| `files` | `array` | 要包含在ZIP封存檔中的檔案清單(`fmt=zip`)。 每個專案可以是URL字串或具有欄位的物件：<ul><li>`url`：下載檔案的URL</li><li>`path`：將此路徑下的檔案儲存在ZIP中</li></ul> | `[{ "url": "https://host/asset.jpg", "path": "folder/location/asset.jpg" }]` |
+| `duplicate` | `string` | ZIP封存檔的重複處理(`fmt=zip`)。 根據預設，儲存在ZIP中相同路徑下的多個檔案會產生錯誤。 設定 `duplicate` 至 `ignore` 只會儲存第一個資產，而忽略其餘資產。 | `ignore` |
+| `watermark` | `object` | 包含關於 [浮水印](#watermark-specific-fields). |  |
+
+### 浮水印特定欄位 {#watermark-specific-fields}
+
+PNG格式會用作浮水印。
+
+| 名稱 | 類型 | 說明 | 範例 |
+|-------------------|----------|-------------|---------|
+| `scale` | `number` | 浮水印的比例，介於 `0.0` 和 `1.0`. `1.0` 表示浮水印具有原始比例(1:1)，較低的值會縮小浮水印大小。 | 值 `0.5` 代表原始大小的一半。 |
+| `image` | `url` | 用於浮水印的PNG檔案的URL。 |  |
 
 ## 非同步事件 {#asynchronous-events}
 
-一旦完成格式副本的處理或出錯，事件將發送到 [[!DNL Adobe I/O] 事件日記帳](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md)。 客戶端必須偵聽通過提供的日誌URL [/register](#register)。 日誌響應包括 `event` 陣列，每個事件包含一個對象，其中 `event` 欄位包含實際事件負載。
+轉譯的處理完成或發生錯誤時，事件會傳送至 [[!DNL Adobe I/O] 事件日誌](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md). 使用者端必須監聽透過提供的日誌URL [/register](#register). 日誌回應包括 `event` 陣列，每個事件由一個物件組成，其中 `event` 欄位包含實際事件裝載。
 
-的 [!DNL Adobe I/O] 所有事件的事件類型 [!DNL Asset Compute Service] 是 `asset_compute`。 日記帳僅自動訂閱此事件類型，並且不再需要根據 [!DNL Adobe I/O] 事件類型。 服務特定事件類型可在 `type` 事件的屬性。
+此 [!DNL Adobe I/O] 「 」的所有事件的事件型別 [!DNL Asset Compute Service] 是 `asset_compute`. 分錄只會自動訂閱此事件型別，不需要根據 [!DNL Adobe I/O] 事件型別。 此服務專屬的事件型別位於 `type` 事件的屬性。
 
-### 事件類型 {#event-types}
+### 事件型別 {#event-types}
 
 | Event | 說明 |
 |---------------------|-------------|
-| `rendition_created` | 為每個成功處理和上載的格式副本發送。 |
-| `rendition_failed` | 為無法處理或上載的每個格式副本發送。 |
+| `rendition_created` | 已針對每個成功處理和上傳的轉譯傳送。 |
+| `rendition_failed` | 針對無法處理或上傳的每個轉譯傳送。 |
 
 ### 事件屬性 {#event-attributes}
 
 | 屬性 | 類型 | Event | 說明 |
 |-------------|----------|---------------|-------------|
-| `date` | `string` | `*` | 在簡化擴展中發送事件的時間戳 [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，由JavaScript定義 [Date.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)。 |
-| `requestId` | `string` | `*` | 原始請求的請求ID `/process`，與 `X-Request-Id` 標題。 |
-| `source` | `object` | `*` | 的 `source` 的 `/process` 請求。 |
-| `userData` | `object` | `*` | 的 `userData` 從 `/process` 的子菜單。 |
-| `rendition` | `object` | `rendition_*` | 傳入的相應格式副本對象 `/process`。 |
-| `metadata` | `object` | `rendition_created` | 的 [元資料](#metadata) 格式副本的屬性。 |
-| `errorReason` | `string` | `rendition_failed` | 格式副本失敗 [原因](#error-reasons) 如果有的話。 |
-| `errorMessage` | `string` | `rendition_failed` | 文本提供有關格式副本失敗（如果有）的詳細資訊。 |
+| `date` | `string` | `*` | 以簡化延伸傳送事件時的時間戳記 [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，由JavaScript定義 [Date.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString). |
+| `requestId` | `string` | `*` | 原始請求的請求ID `/process`，與 `X-Request-Id` 標頭。 |
+| `source` | `object` | `*` | 此 `source` 的 `/process` 要求。 |
+| `userData` | `object` | `*` | 此 `userData` 的轉譯 `/process` 要求（若已設定）。 |
+| `rendition` | `object` | `rendition_*` | 傳入的對應轉譯物件 `/process`. |
+| `metadata` | `object` | `rendition_created` | 此 [中繼資料](#metadata) 轉譯的屬性。 |
+| `errorReason` | `string` | `rendition_failed` | 轉譯失敗 [原因](#error-reasons) 如果有。 |
+| `errorMessage` | `string` | `rendition_failed` | 提供轉譯失敗詳細資訊的文字（如果有的話）。 |
 
 ### 中繼資料 {#metadata}
 
 | 屬性 | 說明 |
 |--------|-------------|
-| `repo:size` | 格式副本的大小（以位元組為單位）。 |
-| `repo:sha1` | 格式副本的sha1摘要。 |
-| `dc:format` | 格式副本的MIME類型。 |
-| `repo:encoding` | 格式副本的字元集編碼（如果它是基於文本的格式）。 |
-| `tiff:ImageWidth` | 格式副本的寬度（以像素為單位）。 僅用於影像格式副本。 |
-| `tiff:ImageLength` | 格式副本的長度（以像素為單位）。 僅用於影像格式副本。 |
+| `repo:size` | 轉譯的大小（位元組）。 |
+| `repo:sha1` | 轉譯的sha1摘要。 |
+| `dc:format` | 轉譯的MIME型別。 |
+| `repo:encoding` | 轉譯的charset編碼（若是文字型格式）。 |
+| `tiff:ImageWidth` | 轉譯的寬度（畫素）。 僅供影像轉譯使用。 |
+| `tiff:ImageLength` | 轉譯的長度（畫素）。 僅供影像轉譯使用。 |
 
 ### 錯誤原因 {#error-reasons}
 
 | 原因 | 說明 |
 |---------|-------------|
-| `RenditionFormatUnsupported` | 給定源不支援請求的格式副本格式。 |
-| `SourceUnsupported` | 即使支援該類型，也不支援特定源。 |
-| `SourceCorrupt` | 源資料已損壞。 包括空檔案。 |
-| `RenditionTooLarge` | 無法使用中提供的預簽名URL上載格式副本 `target`。 實際格式副本大小可作為元資料在 `repo:size` 並且可由客戶端使用適當數量的預簽名URL重新處理此格式副本。 |
-| `GenericError` | 其他任何意外錯誤。 |
+| `RenditionFormatUnsupported` | 給定的來源不支援要求的轉譯格式。 |
+| `SourceUnsupported` | 即使支援型別，也不支援特定來源。 |
+| `SourceCorrupt` | 來源資料已損毀。 包含空白檔案。 |
+| `RenditionTooLarge` | 無法使用中提供的預先簽署URL上傳轉譯 `target`. 實際轉譯大小在中會以中繼資料的形式提供 `repo:size` 使用者端可使用和以正確數量的預先簽署URL重新處理此轉譯。 |
+| `GenericError` | 任何其他非預期的錯誤。 |
