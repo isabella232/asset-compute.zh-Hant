@@ -4,10 +4,11 @@ product: adobe experience manager
 solution: Experience Manager, Experience Manager Assets
 type: Documentation
 role: Developer
+feature: Asset Compute Microservices
 user-guide-title: asset compute服務指南
 user-guide-description: 本檔案涵蓋 [!DNL Asset Compute Service] 如何開發、管理、部署和疑難排解自訂程式碼等工作。
 breadcrumb-title: asset compute服務指南
-source-git-commit: 5257e091730f3672c46dfbe45c3e697a6555e6b1
+source-git-commit: 06016be9b813c28c502f5bd5df87fd42a211e7ac
 workflow-type: tm+mt
 source-wordcount: '96'
 ht-degree: 16%

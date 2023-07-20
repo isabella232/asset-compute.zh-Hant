@@ -8,9 +8,10 @@ getting-started-url: https://experienceleague.adobe.com/docs/experience-manager-
 tutorials-title: Tutorials
 tutorials-url: https://experienceleague.adobe.com/docs/experience-manager-learn/assets/overview.html
 mini-toc-levels: 2
+feature-set: Experience Manager Assets
 git-repo: https://github.com/AdobeDocs/asset-compute.zh-Hant
 index: y
-source-git-commit: 5f987f28fdf8d074ceb6226d21a5f64aad67bf04
+source-git-commit: 66bad4afdc7b08e1e91418ec320b061e47c3683d
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 89%
@@ -25,9 +26,9 @@ metadata.md 檔案包含存放庫層級中繼資料，這些中繼資料會傳�
 | 中繼資料 | 功能 |
 |--- |--- |
 | solution-title | 在文章標題中作為連結使用 |
-| solution-hub-url | 開啟支援中心頁 |
+| solution-hub-url | 開啟支援中心頁面 |
 | solution-icon | 在解決方案標題旁顯示解決方案圖示。尚未實作 |
-| getting-started-url | 連結到入門頁 |
+| getting-started-url | 快速入門頁面的連結 |
 | tutorials-url | 教學課程影片 (Helpx 或 KT 教學課程其中之一) 的連結 |
 | mini-toc-levels | 決定顯示在右側欄中的標題層數量。預設值為 2 |
 | git-repo | 指定內部使用的主要存放庫位置 |
